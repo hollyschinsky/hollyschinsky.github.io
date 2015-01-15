@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Guide to PhoneGap config.xml</title>
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div>
+    <h3 class="title">Configuring PhoneGap</h3>
+        <div class="col col-md-6">
+
+
+        <div class="alert alert-info min">Hover over any element below for specific configuration details. These elements <mark>apply when using the PhoneGap or Cordova CLI</mark>,
+        if you're using PhoneGap Build, please see the <a href="http://docs.build.phonegap.com/en_US/configuring_config_file_element.md.html#Config%20File%20Elements">official PhoneGap Build Guide</a>. </div>
+            <!-- Border container for config source -->
+            <h4>config.xml</h4>
+
+            <div class="cont">
+
+            <div id="config">
+                <p>
+                    <a href="#widget">
+                        &lt;widget <span class="attrib">xmlns=</span><span class="value">"http://www.w3.org/ns/widgets"</span>
+                                <span class="attrib indent">xmlns:gap=</span><span class="value">"http://phonegap.com/ns/1.0"</span>
+                                <span class="attrib indent">id=</span><span class="value">"com.phonegap.helloworld"</span>
+                                <span class="attrib">version=</span><span class="value">"1.0.0"&gt;</span>
+                    </a>
+                </p>
+                <br>
+                <p>
+                    <a href="#name">
+                        &lt;name&gt;<span class="tag-value">Hello World</span>&lt;/name&gt;
+                    </a>
+                </p>
+                <br>
+                <p>
+                    <a href="#description">
+                        &lt;description&gt;<span class="tag-value">A sample PhoneGap application.</span>&lt;/description&gt;
+                    </a>
+                </p>
+                <br>
+                <p>
+                    <a href="#author">
+                        &lt;author <span class="attrib">email=</span><span class="value">"support@phonegap.com"</span>
+                        <span class="attrib">href=</span><span class="value">"http://phonegap.com"</span>&gt;<span class="tag-value"> PhoneGap Team</span>&lt;/author&gt;
+                    </a>
+                </p>
+                <br>
+                <p>
+                    <a href="#content">
+                        &lt;content <span class="attrib">src=</span><span class="value">"index.html"/&gt;</span>
+                    </a>
+                </p>
+                <br>
+                <p>
+                    <a href="#access">
+                        &lt;access origin="*"&gt;
+                    </a>
+                </p>
+                <br>
+                <p>
+                    <a href="#platform">
+                        &lt;platform name="android"&gt;
+                        <div class="attrib">
+                            &lt;preference name="DisallowOverscroll" value="true" /&gt;
+                        </div>
+                        &lt;/platform&gt;
+                    </a>
+                </p>
+
+                <br>
+                <p>
+                    <a href="#feature">
+                        &lt;feature name="Device"&gt;
+                        <div class="attrib">
+                            &lt;param name="android-package" value="org.apache.cordova.device.Device" /&gt;
+                        </div>
+                        &lt;/feature&gt;
+                    </a>
+                </p>
+                <br>
+                <p>
+                    <a href="#preference">
+                        &lt;preference name="Fullscreen" value="true"/&gt;
+                    </a>
+                    <!--<button id="moreBtn" type="button" class="btn btn-success btn-xs" data-toggle="collapse" title="More preferences"-->
+                            <!--data-target="#prefs">+</button>-->
+
+                <!--<p id="prefs" class="collapse out">-->
+                    <br><a href="#overscroll">&lt;preference name="DisallowOverscroll" value="true"/&gt;</a>  <br>
+                    <a href="#orientation">&lt;preference name="Orientation" value="landscape"/&gt;</a><br>
+                    <a href="#backgroundcolor">&lt;preference name="BackgroundColor" value="0xff0000ff"/&gt;</a><br>
+                    <a href="#hidekeyboard">&lt;preference name="HideKeyboardFormAccessoryBar" value="false"/&gt;</a><br>
+                    <!--<a href="#fullscreen">&lt;preference name="Fullscreen" value="true"/&gt;</a><br>-->
+                <!--</p>-->
+                <br>
+                <!--<code>iOS Preferences</code>-->
+                <!--&lt;!-- iOS PREFERENCES --&gt;-->
+                <button id="iosBtn" type="button" class="btn btn-success btn-xs" data-toggle="collapse" title="iOS preferences"
+                        data-target="#iosPrefs">Show iOS Preferences</button>
+
+                <p id="iosPrefs" class="collapse out">
+                    <a href="#enableviewportscale">&lt;preference name="EnableViewportScale" value="true"/&gt;</a>  <br>
+                    <a href="#mediaplaybackrequires">&lt;preference name="MediaPlaybackRequiresUserAction" value="true"/&gt;</a><br>
+                    <a href="#allowinlinemediaplayback">&lt;preference name="AllowInlineMediaPlayback" value="true"/&gt;</a><br>
+                    <a href="#backupwebstorage">&lt;preference name="BackupWebStorage" value="false"/&gt;</a><br>
+                    <a href="#topactivityindicator">&lt;preference name="TopActivityIndicator" value="white"/&gt;</a><br>
+                    <a href="#keyboardrequires">&lt;preference name="KeyboardDisplayRequiresUserAction" value="false"/&gt;</a><br>
+                    <a href="#suppressesincremrender">&lt;preference name="SuppressesIncrementalRendering" value="true"/&gt;</a><br>
+                    <a href="#gapbetweenpages">&lt;preference name="GapBetweenPages" value="0"/&gt;</a><br>
+                    <a href="#pagelength">&lt;preference name="PageLength" value="0"/&gt;</a><br>
+                    <a href="#paginationbreakingmode">&lt;preference name="PaginationBreakingMode" value="page"/&gt;</a><br>
+                    <a href="#paginationmode">&lt;preference name="PaginationMode" value="unpaginated"/&gt;</a><br>
+                    <a href="#uiwebviewdecleration">&lt;preference name="UIWebViewDecelerationSpeed" value="fast"/&gt;</a><br>
+                </p>
+                <!-- Android PREFERENCES -->
+                <br>
+                <br>
+                <!--&lt;!-- ANDROID PREFERENCES --&gt;-->
+                <button id="androidBtn" type="button" class="btn btn-success btn-xs" data-toggle="collapse" title="Android preferences"
+                        data-target="#androidPrefs">Show Android Preferences</button>
+
+
+                <p id="androidPrefs" class="collapse out">
+                    <a href="#keeprunning">&lt;preference name="KeepRunning" value="false"/&gt;</a>  <br>
+                    <a href="#loadurltimeoutvalue">&lt;preference name="LoadUrlTimeoutValue" value="10000"/&gt;</a><br>
+                    <a href="#splashscreen">&lt;preference name="SplashScreen" value="mySplash"/&gt;</a><br>
+                    <a href="#splashscreendelay">&lt;preference name="SplashScreenDelay" value="10000"/&gt;</a><br>
+                    <a href="#inappbrowserstorageenabled">&lt;preference name="InAppBrowserStorageEnabled" value="true"/&gt;</a><br>
+                    <a href="#loadingdialog">&lt;preference name="LoadingDialog" value="My Title,My Message"/&gt;</a><br>
+                    <a href="#loadingpagedialog">&lt;preference name="LoadingPageDialog" value="My Title,My Message"/&gt;</a><br>
+                    <a href="#errorurl">&lt;preference name="ErrorUrl" value="myErrorPage.html"/&gt;</a><br>
+                    <a href="#showtitle">&lt;preference name="ShowTitle" value="true"/&gt;</a><br>
+                    <a href="#loglevel">&lt;preference name="LogLevel" value="VERBOSE"/&gt;</a><br>
+                    <a href="#setfullscreen">&lt;preference name="SetFullscreen" value="false"/&gt;</a><br>
+                    <a href="#androidlaunchmode">&lt;preference name="AndroidLaunchMode" value="singleTop"/&gt;</a><br>
+                </p>
+
+
+
+                <br>
+
+                <!-- ICONS and SPLASH -->
+                <br>
+                <p>
+                    <a href="#icon">
+                        &lt;icon src="res/ios/icon.png" platform="ios" width="57" height="57" density="mdpi"&gt;
+                        <!--<div class="attrib">-->
+
+                        <!--</div>-->
+                        &lt;/icon&gt;
+                    </a>
+                </p>
+                <br>
+                <p>
+                    <a href="#splash">
+                        &lt;splash src="res/ios/icon.png" platform="ios" width="57" height="57" density="mdpi"&gt;
+                        <!--<div class="attrib">-->
+
+                        <!--</div>-->
+                        &lt;/splash&gt;
+                    </a>
+                </p>
+                <br>
+                <br>
+
+
+
+            </div>
+         </div>
+
+            <p>For more details, see the <a href="http://docs.phonegap.com/en/edge/config_ref_index.md.html#The%20config.xml%20File">Official PhoneGap Docs</a>. </p>
+            <div style="height: 100px"></div>
+        </div>
+
+        <div id="desc">
+            <div id="widget" class="col col-md-10 hidediv">
+                <h4>Widget</h4>The root element of the config.xml with some identifying attributes.
+                <div class="callout-info callout">
+                    <p><i>id</i> Reverse-domain identifier for the app</p>
+                    <p><i>version</i> Full version number expressed in major/minor/patch notation</p>
+                    <p><i>versionCode</i> Android only - internal version number (more details <a href="http://developer.android.com/tools/publishing/versioning.html">here</a>).</p>
+                    <p><i>cfBundleVersion</i> iOS only - internal version number</p>
+                </div>
+            </div>
+
+            <div id="name" class="col col-md-10 hidediv">
+                <h4>Name</h4>Specifies a formal name for the app as it should appear on the device's home screen and within app store's.
+            </div>
+
+            <div id="description" class="col col-md-10 hidediv">
+                <h4>Description</h4>A description of what the application is about or what function it performs.
+            </div>
+
+            <div id="author" class="col col-md-10 hidediv">
+                <h4>Author</h4>The author of the application. May appear in the app store listings.
+                <div class="callout-info callout">
+                    <p><i>email</i> An email address for the author.</p>
+                    <p><i>href</i> a URL associated with the author (product page, blog etc).</p>
+                </div>
+            </div>
+
+            <div id="content" class="col col-md-10 hidediv">
+                <h4>Content</h4>Defines the app's starting page in the top-level web assets directory.
+                <div class="callout-info callout">
+                    <p><i>src</i> The file name/location of the starting page. Defaults to index.html.</p>
+                </div>
+            </div>
+
+            <div id="preference" class="col col-md-10 hidediv">
+                <h4>Preference</h4> Sets various options as pairs of name/value attributes.
+                <p class="alert-warning"> Preference name is <bold>case-insensitive</bold>.</p>
+                <br><br><strong class="label label-warning">IMPORTANT:</strong> Most preferences are unique to a platform or subset of platforms (iOS, Android, Win, PhoneGap Build etc).
+                <div class="callout-info callout">
+                    <p><i>name</i> The name of the preference to set.</p>
+                    <p><i>value</i> The value of the preference to set.</p>
+                </div>
+            </div>
+
+            <!-- PREFERENCES START -->
+            <div id="overscroll" class="col col-md-10 hidediv">
+                <h4>DisallowOverscroll</h4>
+                Set to true if you don't want the interface to display any feedback when users scroll past the beginning or end of content.<br>
+
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>false (boolean)</code></p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    Android and iOS only
+                </div>
+                <div class="alert alert-success">
+                    On iOS, overscroll gestures cause content to bounce back to its original position.
+                    On Android, they produce a more subtle glowing effect along the top or bottom edge of the content.
+                </div>
+            </div>
+
+            <div id="fullscreen" class="col col-md-10 hidediv">
+                <h4>Fullscreen</h4>
+                Set to true if to hide the status bar at the top of the screen.<br>
+
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>false (boolean)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    All platforms except iOS (see <a href="https://issues.apache.org/jira/browse/CB-6182"> here</a>)<br><br>
+                    * Use <a href="https://github.com/apache/cordova-plugin-statusbar/blob/master/doc/index.md">StatusBarPlugin for iOS</a>
+                </div>
+                <div class="alert alert-success">
+                    On iOS, overscroll gestures cause content to bounce back to its original position.
+                    On Android, they produce a more subtle glowing effect along the top or bottom edge of the content.
+                </div>
+            </div>
+
+
+            <div id="orientation" class="col col-md-10 hidediv">
+                <h4>Orientation</h4>
+                Orientation allows you to lock orientation and prevent the interface from rotating in response to changes in orientation.<br>
+
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>default, landscape, or portrait</code> where setting the value of <code>default</code> will assume both portrait and landscape</p>
+                    <p class="alert-warning alert">Leave this setting out if you want to support the default platform-level value (typically portrait only).</p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    All except iOS (see <a href="https://issues.apache.org/jira/browse/CB-6182"> here</a>)
+                    * Use <a href="https://github.com/apache/cordova-plugin-statusbar/blob/master/doc/index.md">StatusBarPlugin for iOS</a>
+                </div>
+                <div class="alert alert-success">
+                    On iOS, overscroll gestures cause content to bounce back to its original position.
+                    On Android, they produce a more subtle glowing effect along the top or bottom edge of the content.
+                </div>
+            </div>
+
+            <div id="backgroundcolor" class="col col-md-10 hidediv">
+                <h4>BackgroundColor</h4>
+                Set the apps background color. Supports a four-byte hex value, with the first byte representing the alpha channel, and standard RGB values for the following three bytes.
+
+                For instance, this hex value specifies a shade of blue: <code>0xff0000ff</code>
+                <br>
+
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>default, landscape, or portrait</code> where setting the value of <code>default</code> will assume both portrait and landscape</p>
+                    <p class="alert-warning alert">Leave this setting out if you want to support the default platform-level value (typically portrait only).</p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    Android. Overrides CSS otherwise available across all platforms, for example: <code>body {background-color:blue}</code>
+                </div>
+                <!--<div class="alert alert-success">-->
+                    <!--On iOS, overscroll gestures cause content to bounce back to its original position.-->
+                    <!--On Android, they produce a more subtle glowing effect along the top or bottom edge of the content.-->
+                <!--</div>-->
+            </div>
+
+            <div id="hidekeyboard" class="col col-md-10 hidediv">
+                <h4>HideKeyboardFormAccessoryBar</h4>
+                Set to true to hide the additional toolbar that appears above the keyboard, helping users navigate from one form input to another.
+
+                For instance, this hex value specifies a shade of blue: <code>0xff0000ff</code>
+                <br>
+
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>false (boolean)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    Android, iOS
+                </div>
+            </div>
+
+            <!-- iOS Preferences -->
+
+            <div id="enableviewportscale" class="col col-md-10 hidediv">
+                <h4>EnableViewportScale</h4>
+                Set to true to allow a viewport meta tag to either disable or restrict the range of user scaling, which is enabled by default.
+                <br>
+                Place a viewport such as the following in the HTML to disable scaling and fit content flexibly within the rendering WebView:
+                &lt;meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no' /&gt;
+
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>false (boolean)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    iOS
+                </div>
+            </div>
+
+            <div id="mediaplaybackrequires" class="col col-md-10 hidediv">
+                <h4>MediaPlaybackRequiresUserAction</h4>
+                Set to true to prevent HTML5 videos or audios from playing automatically with the autoplay attribute or via JavaScript.
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>false (boolean)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    iOS
+                </div>
+            </div>
+
+            <div id="allowinlinemediaplayback" class="col col-md-10 hidediv">
+                <h4>AllowInlineMediaPlayback</h4>
+                Set to true to allow HTML5 media playback to appear inline within the screen layout, using browser-supplied controls rather than native controls. For this to work, add the
+                <code>webkit-playsinline</code> attribute to any <code>&lt;video&gt;</code> elements.
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>false (boolean)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    iOS
+                </div>
+            </div>
+
+            <div id="backupwebstorage" class="col col-md-10 hidediv">
+                <h4>BackupWebStorage</h4>
+                Set to <code>cloud</code> to allow web storage data to backup via iCloud. Set to <code>local</code> to allow only local backups via iTunes sync. Set to <code>none</code> prevent web storage backups.
+                <code>webkit-playsinline</code> attribute to any <code>&lt;video&gt;</code> elements.
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>cloud (string)</code></p>
+                    Valid values are <code>none, local and cloud</code>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    iOS
+                </div>
+            </div>
+
+            <div id="topactivityindicator" class="col col-md-10 hidediv">
+                <h4>TopActivityIndicator</h4>
+                 Controls the appearance of the small spinning icon in the status bar that indicates significant processor activity.
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>gray (string)</code></p>
+                    Valid values are <code>whiteLarge, white and gray</code>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    iOS
+                </div>
+            </div>
+
+            <div id="keyboardrequires" class="col col-md-10 hidediv">
+                <h4>KeyboardDisplayRequiresUserAction</h4>
+                Set to false to allow the keyboard to appear when calling focus() on form inputs.
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>true (boolean)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    iOS
+                </div>
+            </div>
+
+            <div id="suppressesincremrender" class="col col-md-10 hidediv">
+                <h4>SuppressesIncrementalRendering</h4>
+                Set to <code>true</code> to wait until all content has been received before it renders to the screen.
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>false (boolean)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    iOS
+                </div>
+            </div>
+
+
+            <div id="gapbetweenpages" class="col col-md-10 hidediv">
+                <h4>GapBetweenPages</h4>
+                The size of the gap, in points, between pages.
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>0 (float)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    iOS
+                </div>
+            </div>
+
+            <div id="pagelength" class="col col-md-10 hidediv">
+                <h4>PageLength</h4>
+                The size of each page, in points, in the direction that the pages flow. When <code>PaginationMode</code>
+                is right to left or left to right, this property represents the width of each page. When <code>PaginationMode</code>  is
+                <code>topToBottom or bottomToTop</code>code, this property represents the height of each page. The default value is 0,
+                which means the layout uses the size of the viewport to determine the dimensions of the page.
+
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>0 (float)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    iOS
+                </div>
+            </div>
+
+            <div id="paginationbreakingmode" class="col col-md-10 hidediv">
+                <h4>PaginationBreakingMode</h4>
+                The manner in which column or page-breaking occurs. This property determines whether certain CSS properties
+                regarding column and page-breaking are honored or ignored.
+
+                When this property is set to <code>column</code>, the content respects the CSS properties related to column-breaking in place of page-breaking.
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>page (string)</code> </p>
+                    Valid values are <code>page and column</code>.
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    iOS
+                </div>
+            </div>
+
+            <div id="paginationmode" class="col col-md-10 hidediv">
+                <h4>PaginationMode</h4>
+                This property determines whether content in the web view is broken up into pages that fill the view one screen at a time, or shown
+                as one long scrolling view.
+
+                If set to a paginated form, this property toggles a paginated layout on the content, causing the web view to use the values of
+                <code>PageLength and GapBetweenPages</code> to re-layout its content.
+
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>unpaginated (string)</code> </p>
+                    Valid values are <code>unpaginated, leftToRight, topToBottom, bottomToTop, and rightToLeft</code>.
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    iOS
+                </div>
+            </div>
+
+            <div id="uiwebviewdecleration" class="col col-md-10 hidediv">
+                <h4>UIWebViewDecelerationSpeed</h4>
+                This property controls the deceleration speed of momentum scrolling. <code>normal</code>
+                is the default speed for most native apps and <code>fast</code> is the default for Mobile Safari.
+
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>normal (string)</code> </p>
+                    Valid values are <code>normal, fast</code>.
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    iOS
+                </div>
+            </div>
+
+            <div id="keeprunning" class="col col-md-10 hidediv">
+                <h4>KeepRunning</h4>
+                Determines whether the application stays running in the background even after a pause event fires. Setting this to
+                <code>false</code> does not kill the app after a pause event, but simply halts execution of code within the cordova
+                webview while the app is in the background.
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>true (boolean)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    Android
+                </div>
+            </div>
+
+            <div id="loadurltimeoutvalue" class="col col-md-10 hidediv">
+                <h4>LoadUrlTimeoutValue</h4>
+                When loading a page, the amount of time to wait before throwing a timeout error.
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>20000 (milliseconds)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    Android
+                </div>
+            </div>
+
+            <div id="splashscreen" class="col col-md-10 hidediv">
+                <h4>SplashScreen</h4>
+                The name of the file minus its extension in the res/drawable directory.
+                Various assets must share this common name in various subdirectories.
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>splash (string)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    Android
+                </div>
+            </div>
+
+            <div id="splashscreendelay" class="col col-md-10 hidediv">
+                <h4>SplashScreenDelay</h4>
+                The amount of time the splash screen image displays.
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>3000 (milliseconds)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    Android
+                </div>
+            </div>
+
+            <div id="inappbrowserstorageenabled" class="col col-md-10 hidediv">
+                <h4>InAppBrowserStorageEnabled</h4>
+                Controls whether pages opened within an InAppBrowser can access the same localStorage and WebSQL storage as pages opened with the default browser.
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>true (boolean)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    Android
+                </div>
+            </div>
+
+            <div id="loadingdialog" class="col col-md-10 hidediv">
+                <h4>LoadingDialog </h4>
+                If set, displays a dialog with the specified title and message, and a spinner, when loading the first page of an
+                application. The title and message are separated by a comma in this value string, and that comma is removed before
+                the dialog is displayed.
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>null (string)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    Android
+                </div>
+            </div>
+
+
+            <div id="loadingpagedialog" class="col col-md-10 hidediv">
+                <h4>LoadingPageDialog </h4>
+                The same as LoadingDialog, but for loading every page after the first page in the application.
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>null (string)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    Android
+                </div>
+            </div>
+
+            <div id="errorurl" class="col col-md-10 hidediv">
+                <h4>ErrorUrl </h4>
+                If set, will display the referenced page upon an error in the application instead of a dialog with the title "Application Error".
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>null (url)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    Android
+                </div>
+            </div>
+
+            <div id="showtitle" class="col col-md-10 hidediv">
+                <h4>ShowTitle </h4>
+                Show the title at the top of the screen.
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>false (boolean)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    Android
+                </div>
+            </div>
+
+
+
+            <div id="loglevel" class="col col-md-10 hidediv">
+                <h4>LogLevel </h4>
+                Sets the minimum log level through which log messages from your application will be filtered.
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>ERROR (string)</code> </p>
+                    Valid values are <code>ERROR, WARN, INFO, DEBUG, and VERBOSE</code>.
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    Android
+                </div>
+            </div>
+
+            <div id="setfullscreen" class="col col-md-10 hidediv">
+                <h4>SetFullscreen </h4>
+                Same as the Fullscreen parameter in the global configuration of this xml file. This Android-specific element is deprecated in favor of the global Fullscreen element, and will be removed in a future version.
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>false (boolean)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    Android
+                </div>
+            </div>
+
+
+            <div id="androidlaunchmode" class="col col-md-10 hidediv">
+                <h4>AndroidLaunchMode </h4>
+                Sets the Activity <code>android:launchMode</code> attribute. This changes what happens when the app is launched from app icon or intent and is already running.
+                <br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>singleTop (string)</code> </p>
+                    Valid values are <code>standard, singleTop, singleTask, singleInstance</code>.
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    Android
+                </div>
+            </div>
+            <!-- PREFERENCES END -->
+
+            <div id="icon" class="col col-md-12 hidediv scroll">
+                <h4>Icon </h4>
+                When working in the CLI you can define app icon(s) via the <code>&lt;icon&gt;</code> element (config.xml).
+                If you do not specify an icon, a default image is used.
+                <br>
+                <strong>Attributes</strong>
+
+                <div class="callout-info callout">
+                    <p><i>src</i> (required) specifies the location of the image file, relative to your project directory.</p>
+                    <p><i>platform</i> (optional) target platform </p>
+                    <p><i>width</i> (optional) icon width in pixels </p>
+                    <p><i>height</i> (optional) icon height in pixels </p>
+                    <p><i>density</i> (optional) android specific, specifies icon density </p>
+                </div>
+
+
+                <div class="callout callout-platform">
+                    The following configuration can be used to define single default icon which will be used for all platforms.
+                    <br>
+                    <code>&lt;icon src="res/icon.png" /&gt;</code>
+                </div>
+                <div class="callout callout-more">
+                    To define pixel perfect icons for each platform, surround your <code>&lt;icon&gt;</code> elements with the
+                    <code>&lt;platform&gt;</code> element with the following attributes per platform:
+
+                    <br>
+                    <code>&lt;platform name="android"&gt;<br>
+                        &lt;icon src="res/android/ldpi.png" density="ldpi" /&gt;<br>
+                        &lt;icon src="res/android/mdpi.png" density="mdpi" /&gt;<br>
+                        &lt;icon src="res/android/hdpi.png" density="hdpi" /&gt;<br>
+                        &lt;icon src="res/android/xhdpi.png" density="xhdpi" /&gt;<br>
+                        &lt;platform/&gt;<br>
+                    </code>
+
+                    <code>&lt;platform name="ios"&gt;<br>
+                        iOS 8.0+<br>
+                        iPhone 6 Plus<br>
+                        &lt;icon src="res/ios/icon-60@3x.png" width="180" height="180" /&gt;<br>
+                        iOS 7.0+<br>
+                        iPhone / iPod Touch<br>
+                        &lt;icon src="res/ios/icon-60.png" width="60" height="60" /&gt;<br>
+                        &lt;icon src="res/ios/icon-60@2x.png" width="120" height="120" /&gt;<br>
+                        iPad<br>
+                        &lt;icon src="res/ios/icon-76.png" width="76" height="76"/&gt;<br>
+                        &lt;icon src="res/ios/icon-76@2x.png" width="152" height="152"/&gt;<br>
+                        iOS 6.1<br>
+                        <!-- Spotlight Icon -->
+                        &lt;icon src="res/ios/icon-40.png" width="40" height="40"/&gt;<br>
+                        &lt;icon src="res/ios/icon-40@2x.png" width="80" height="80"/&gt;<br>
+                        <!-- iPhone / iPod Touch -->
+                        &lt;icon src="res/ios/icon.png" width="57" height="57"/&gt;<br>
+                        &lt;icon src="res/ios/icon@2x.png" width="114" height="114"/&gt;<br>
+                        <!-- iPad -->
+                        &lt;icon src="res/ios/icon-72.png" width="72" height="72"/&gt;<br>
+                        &lt;icon src="res/ios/icon-72@2x.png" width="144" height="144"/&gt;<br>
+                        <!-- iPhone Spotlight and Settings Icon -->
+                        &lt;icon src="res/ios/icon-small.png" width="29" height="29"/&gt;<br>
+                        &lt;icon src="res/ios/icon-small@2x.png" width="58" height="58"/&gt;<br>
+                        <!-- iPad Spotlight and Settings Icon -->
+                        &lt;icon src="res/ios/icon-50.png" width="50" height="50"/&gt;<br>
+                        &lt;icon src="res/ios/icon-50@2x.png" width="100" height="100"/&gt;<br>
+                        &lt;platform/&gt;<br>
+                    </code>
+
+
+                </div>
+
+            </div>
+
+            <div id="splash" class="col col-md-12 hidediv scroll">
+                <h4>Splash </h4>
+                When working in the CLI you can define app icon(s) via the <code>&lt;icon&gt;</code> element (config.xml). If you do not specify a splash screen a default image is used.
+                <br><br>
+                <!--<div class="alert alert-warning"> The value of the <code>src</code> attribute is relative to the project directory and not to the <i>www</i> directory.-->
+                <!--You can name the source image whatever you choose since the internal name in the app is determined by Cordova.</div>-->
+
+
+                <strong>Attributes</strong>
+                <div class="callout-info callout">
+                    <p><i>src</i> <mark>(required)</mark> specifies the location of the image file, relative to your project directory.</p>
+                    <p><i>platform</i> <mark>(optional)</mark> target platform </p>
+                    <p><i>width</i> <mark>(required for ios, wp8 and windows8)</mark> image width in pixels </p>
+                    <p><i>height</i> <mark>(required for ios, wp8 and windows8)</mark> image height in pixels </p>
+                    <p><i>density</i> <mark>(required for android)</mark> android specific, specifies image density </p>
+                </div>
+
+                <div class="callout callout-platform">
+                    To define pixel perfect images for each platform, surround your <code>&lt;splash&gt;</code> elements with the
+                    <code>&lt;platform&gt;</code> element with the following attributes per platform:<br>
+                    <code>
+                        &lt;platform name="android"&gt;<br>
+                        &lt;splash src="res/screen/android/splash-land-hdpi.png" density="land-hdpi"/&gt;<br>
+                        &lt;splash src="res/screen/android/splash-land-ldpi.png" density="land-ldpi"/&gt;<br>
+                        &lt;splash src="res/screen/android/splash-land-mdpi.png" density="land-mdpi"/&gt;<br>
+                        &lt;splash src="res/screen/android/splash-land-xhdpi.png" density="land-xhdpi"/&gt;<br>
+                        <br>
+                        &lt;splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi"/&gt;<br>
+                        &lt;splash src="res/screen/android/splash-port-ldpi.png" density="port-ldpi"/&gt;<br>
+                        &lt;splash src="res/screen/android/splash-port-mdpi.png" density="port-mdpi"/&gt;<br>
+                        &lt;splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi"/&gt;<br>
+                        &lt;platform/&gt;<br>
+                    </code>
+                </div>
+            </div>
+
+
+            <div id="access" class="col col-md-10 hidediv">
+                <h4>Access</h4>define the set of external domains the app is allowed to communicate with. The default value shown above allows it to access any server.
+                <br>
+                See the <a href="http://docs.phonegap.com/en/edge/guide_appdev_whitelist_index.md.html#Whitelist%20Guide">Domain Whitelist Guide for details.</a>
+                <div class="callout-info callout">
+                    <p><i>origin</i> The file name/location of the starting page. Defaults to index.html.</p>
+                </div>
+            </div>
+
+            <div id="feature" class="col col-md-10 hidediv">
+                <h4>Feature</h4> Used for the specific case of updating the platform-level config.xml to include a certain plugin or customization
+                specific to that platform.
+
+                <div class="alert alert-danger">Not typically used with the CLI. </div>
+
+                <div class="callout-info callout">
+                    <p><i>name</i> The name of a specific feature, typically a plugin API to access.</p><br>
+                    <strong>Child elements</strong>
+                        <p><i>param</i> The name of the parameter to set a name and value for.</p>
+                        <ul>
+                            <li><i>name</i> The name of the parameter to set a name and value for.</li>
+                            <li><i>value</i> The name of the parameter to set a name and value for.</li>
+                        </ul>
+                </div>
+            </div>
+
+            <div id="platform" class="col col-md-10 hidediv">
+                <h4>Platform</h4>
+                Use this element to specify configuration that should only appear in a single platform-specific config.xml file.
+                <br>
+                For instance, if you wanted to specify a preference for android only, surround it by this element with the platform
+                <code>name</code> attribute set to <bold>android</bold>.
+
+                <div class="callout-info callout">
+                    <p><i>name</i> The name of the platform in which to apply this configuration. </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--<div id="editor" class="row"><br>-->
+        <!--<input type="file" name="configFile" id="configFile"><br><button class="btn btn-primary" onclick="getFile()">Go</button>-->
+        <!--<textarea id="customConfig" rows="25" cols="87">-->
+
+        <!--</textarea>-->
+    <!--</div>-->
+
+    <script src="lib/jquery-1.11.2.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+        function getFile() {
+            var fileObj = document.getElementById("configFile");
+        }
+
+    </script>
+    <script>
+            $("a").hover(
+                function () {
+                    $(".showdiv").removeClass("showdiv");
+
+                    var el = document.getElementById(this.hash.substr(1));
+                    $(el).addClass("showdiv");
+                }
+            )
+    </script>
+    <script>
+        $('#prefs').on('show.bs.collapse', function () {
+            $("#collapseBtn").text("+");
+            $("#collapseBtn").addClass("btn-danger");
+            $("#collapseBtn").removeClass("btn-success");
+        })
+        $('#prefs').on('hide.bs.collapse', function () {
+            $("#collapseBtn").text("-");
+            $("#collapseBtn").addClass("btn-success");
+            $("#collapseBtn").removeClass("btn-danger");
+        })
+        $('#iosPrefs').on('show.bs.collapse', function () {
+            $("#iosBtn").text("Hide iOS Preferences");
+            $("#iosBtn").addClass("btn-danger");
+            $("#iosBtn").removeClass("btn-success");
+        })
+        $('#iosPrefs').on('hide.bs.collapse', function () {
+            $("#iosBtn").text("Show iOS Preferences");
+            $("#iosBtn").addClass("btn-success");
+            $("#iosBtn").removeClass("btn-danger");
+        })
+        $('#androidPrefs').on('show.bs.collapse', function () {
+            $("#androidBtn").text("Hide Android Preferences");
+            $("#androidBtn").addClass("btn-danger");
+            $("#androidBtn").removeClass("btn-success");
+        })
+        $('#androidPrefs').on('hide.bs.collapse', function () {
+            $("#androidBtn").text("Show Android Preferences");
+            $("#androidBtn").addClass("btn-success");
+            $("#androidBtn").removeClass("btn-danger");
+        })
+    </script>
+</body>
+
+</html>

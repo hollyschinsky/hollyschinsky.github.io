@@ -1,0 +1,95 @@
+body {
+    margin: 5px;
+}
+/*#editor {*/
+    /*padding-left: 8px;*/
+/*}*/
+.cont {
+    background: #fff;
+    border: 2px solid #ddd;
+    float: left;
+    margin-right: 3.8%;
+    padding: 12px;
+    position: relative;
+}
+.hidediv {
+    display: none;
+}
+.showdiv {
+    display: block;
+}
+p {
+    margin: 0 0 0px;
+}
+a[href] p {
+    text-indent: 15px;
+
+}
+
+.hidediv>p {
+     margin: 0 0 0px;
+}
+.hidediv>.callout>p>i {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.callout {
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+.callout-info {
+    border-left-color: #5bc0de;
+}
+.callout-platform {
+    border-left-color: #f0ad4e;
+}
+.callout-more {
+    border-left-color: #5b2499;
+}
+.title {
+    border-bottom: 2px solid #e2e2e2;
+}
+#desc {
+    left: 48%;
+    height: 100%;
+    width: 55%;
+    position: fixed;
+    top: 6%;
+}
+#config {
+    font-family: courier, monospace;
+    color: #053999;
+}
+.value {
+    color: #0e992a;
+}
+.attrib {
+    color: #994992;
+    text-indent: 15px;
+}
+a {
+    color: #053999;
+}
+.tag-value {
+    color: #323232;
+
+}
+.indent {
+    margin-left: 15px;
+}
+.scroll {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+.min {
+    margin-right: 20px;
+}

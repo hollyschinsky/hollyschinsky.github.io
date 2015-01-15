@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.phonegap.helloworld"
+        version   = "1.0.0">
+
+    <name>Hello World</name>
+
+    <description>
+        Hello World sample application that responds to the deviceready event.
+    </description>
+
+    <author href="http://phonegap.com" email="support@phonegap.com">
+        PhoneGap Team
+    </author>
+
+    <content src="index.html" />
+    <access origin="*" />
+
+    <!-- ISSUES ON PGB SITE --?
+    FALSE for iOS it's putting all of them in - If you want to use each platform's default settings (usually portrait only),
+    remove this tag from your config.xml file.
+    Icons src defaults to www but in the default one it's root
+
+    stay-in-webview not documented -
+            pref.name == "stay-in-webview" and pref.value == "true"
+              doc.root.delete_element("./preference[@name='OpenAllWhitelistURLsInWebView']")
+    show-splash-screen-spinner not used in code? Not documented either
+    pref.name == "show-splash-screen-spinner" and pref.value == "false"
+              doc.root.delete_element("./preference[@name='ShowSplashScreenSpinner']")
+              doc.root.add_element 'preference',
+                'name' => 'ShowSplashScreenSpinner',
+                'value' => "false"
+
+    auto-hide-splash-screen" and pref.value == "false" not documented on PGB
+    deployment-target is documented but not in Hello World
+
+
+    detect-data-types on PGB< what does it do? Add meta?
+        detect-data-types" and pref.value == "false"
+              doc.root.delete_element("./preference[@name='DataDetectorEnabled']")
+              doc.root.add_element 'preference',
+                'name' => 'DataDetectorEnabled'
+
+
+        -->
+
+
+    <!-- Customize your app and platform with the preference element. -->
+
+    <!--
+        ATTN PHONEGAP BUILD USERS - Be sure to read this post about customizing
+        http://phonegap.com/blog/2014/01/30/customizing-your-android-manifest-and-ios-property-list-on-phonegap-build/
+    -->
+
+
+    <!-- ********** iOS ********** -->
+    <!-- ios: control whether the screen 'bounces' when scrolled beyond the top - value of true recommended -->
+    <!-- note: used to be webviewbounce or UIWebViewBounce and false would be the same as setting this to true. -->
+    <preference name="DisallowOverscroll" value="true"/>
+
+    <!-- IOS AUTO ADDED BY CLI UPON BUILD -->
+    <preference name="AllowInlineMediaPlayback" value="false" />
+    <preference name="EnableViewportScale" value="false" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="true" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="SuppressesIncrementalRendering" value="false" />
+    <preference name="TopActivityIndicator" value="gray" />
+    <preference name="GapBetweenPages" value="0" />
+    <preference name="PageLength" value="0" />
+    <preference name="PaginationBreakingMode" value="page" />
+    <preference name="PaginationMode" value="unpaginated" />
+
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="BackupWebStorage" value="cloud" />
+    <!--    <preference name="DisallowOverscroll" value="false" />  Default value is false but see above -->
+    <preference name="FadeSplashScreen" value="true" />
+    <preference name="FadeSplashScreenDuration" value=".25" />
+    <preference name="ShowSplashScreenSpinner" value="true" />
+
+    <!-- IOS PHONEGAP BUILD ADDITIONS -->
+    <preference name="AllowInlineMediaPlayback" value="false" />
+    <preference name="EnableViewportScale" value="false" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="true" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="SuppressesIncrementalRendering" value="false" />
+    <preference name="TopActivityIndicator" value="gray" />
+    <preference name="GapBetweenPages" value="0" />
+    <preference name="PageLength" value="0" />
+    <preference name="PaginationBreakingMode" value="page" />
+    <preference name="PaginationMode" value="unpaginated" />
+
+    <!-- ALL PLATFORMS PHONEGAP BUILD -->
+    <!-- versions now 3.0.0, 3.0.0, 3.1.0, 3.2.0, 3.3.0, 3.4.0, 3.5.0 (default), and 3.6.3 -->
+    <preference name="phonegap-version"           value="3.5.0" />          <!-- all: current version of PhoneGap -->
+    <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
+    <!-- Orientation not supported on iOS, must customize your config to: -->
+    <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
+
+    <!--- IOS PHONEGAP BUILD -->
+    <preference name="show-splash-screen-spinner" value="true" />           <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
+    <preference name="stay-in-webview"            value="false" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
+    <preference name="ios-statusbarstyle"         value="black-opaque" />   <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
+
+    <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
+    <preference name="detect-data-types"          value="true" />           <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
+    <preference name="exit-on-suspend"            value="false" />          <!-- ios: if set to true, app will terminate when home button is pressed -->
+    <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
+
+    <!-- Adding this since on PGB site -->
+    <preference name="deployment-target" value="7.0" />     <!-- ios only MinimumOSVersion in the ipa Propertly List. -->
+
+    <!-- not documented in PGB -->
+    <preference name="auto-hide-splash-screen"    value="true" />
+
+
+
+
+    <!-- ALL Platforms (except ios): hides the status bar at the top of the screen -->
+    <!-- See bug here for why not ios: https://issues.apache.org/jira/browse/CB-6182 -->
+    <preference name="fullscreen" value="true" /> -->
+    <!-- For iOS with PhoneGap Build, you could use the statusbarplugin to hide it programmatically or customize
+         your property list for iOS with the config-file element and overwrite the plist values such as:
+         (re: http://phonegap.com/blog/2014/01/30/customizing-your-android-manifest-and-ios-property-list-on-phonegap-build/)
+    -->
+    <gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">
+        <false/>
+    </gap:config-file>
+    <gap:config-file platform="ios" parent="UIStatusBarHidden" overwrite="true">
+        <true/>
+    </gap:config-file>
+
+    <!-- For iOS with CLI, you could use the statusbarplugin to hide it programmatically or instead just set these
+        keys in the app's .plist file (right click on .plist file and choose open as source)
+        <key>UIViewControllerBasedStatusBarAppearance</key>
+            <false/>
+            <key>UIStatusBarHidden</key>
+            <true/>
+    -->
+
+    <!-- Orientation not supported in iOS - must modify the app's plist
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string>
+        <string>UIInterfaceOrientationPortraitUpsideDown</string>
+        <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+    <key>UISupportedInterfaceOrientations~ipad</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string>
+        <string>UIInterfaceOrientationPortraitUpsideDown</string>
+        <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+    -->
+
+    <!-- ********** Android ********** -->
+    <!--
+        For Android: if you do not want any permissions to be added to your app, add the
+        following tag to your config.xml; you will still have the INTERNET
+        permission on your app, which PhoneGap requires.
+    -->
+
+
+    <!-- permissions is a PGB thing, not CLI. Not sure if it's still working on PGB either yet. Test with this vs adding feature tags for
+     the different plugins to see if it's enforced. SEE next sentence - seems to be managed by the plugins now on PGB and thru the config-file
+     element on PGB.
+     "Aside from the debug-server feature, the feature tag is essentially deprecated on PhoneGap Build since PhoneGap APIs were pluginized.
+     Permissions are now generally managed by individual plugins, and application manifests and permissions can be modified directly
+     using the config-file element.
+     However for backwards-compatibility, they are still supported and map to device permissions on Android and Windows Phone 8:"
+     -->
+    <preference name="permissions"                value="none"/>
+
+    <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
+    <preference name="android-minSdkVersion"      value="7" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
+    <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
+
+    <!-- add these to sample since on PGB docs -->
+    <preference name="splash-screen-duration" value="10000"/> <!-- android only: Duration that the splash screen remains visible; defaults to 5000 (ms). For auto-hide behaviour call navigator.splashscreen.hide() in the deviceready callback.  -->
+    <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" /> <!-- android only How the main window of the activity interacts with the window containing the on-screen soft keyboard.-->
+    <preference name="android-targetSdkVersion" value="12" /> <!-- android: Corresponds to the usesSdk attributes in the AndroidManifest.xml file -- an integer designating the API Level that the application targets. If not set, the default value equals that given to minSdkVersion.-->
+    <!-- Plugins -->
+
+    <!-- Core plugins -->
+    <gap:plugin name="org.apache.cordova.battery-status" />
+    <gap:plugin name="org.apache.cordova.camera" />
+    <gap:plugin name="org.apache.cordova.media-capture" />
+    <gap:plugin name="org.apache.cordova.console" />
+    <gap:plugin name="org.apache.cordova.contacts" />
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.device-motion" />
+    <gap:plugin name="org.apache.cordova.device-orientation" />
+    <gap:plugin name="org.apache.cordova.dialogs" />
+    <gap:plugin name="org.apache.cordova.file" />
+    <gap:plugin name="org.apache.cordova.file-transfer" />
+    <gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="org.apache.cordova.globalization" />
+    <gap:plugin name="org.apache.cordova.inappbrowser" />
+    <gap:plugin name="org.apache.cordova.media" />
+    <gap:plugin name="org.apache.cordova.network-information" />
+    <gap:plugin name="org.apache.cordova.splashscreen" />
+    <gap:plugin name="org.apache.cordova.vibration" />
+
+    <!-- Third party plugins -->
+    <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
+    <!--
+        <gap:plugin name="com.phonegap.plugins.barcodescanner" />
+    -->
+
+    <!-- Define app icon for each platform. -->
+    <icon src="icon.png" />
+    <icon src="www/res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:qualifier="ldpi" />
+    <icon src="www/res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:qualifier="mdpi" />
+    <icon src="www/res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:qualifier="hdpi" />
+    <icon src="www/res/icon/android/icon-96-xhdpi.png"  gap:platform="android"    gap:qualifier="xhdpi" />
+    <icon src="www/res/icon/blackberry/icon-80.png"     gap:platform="blackberry" />
+    <icon src="www/res/icon/blackberry/icon-80.png"     gap:platform="blackberry" gap:state="hover"/>
+    <icon src="www/res/icon/ios/icon-57.png"            gap:platform="ios"        width="57" height="57" />
+    <icon src="www/res/icon/ios/icon-72.png"            gap:platform="ios"        width="72" height="72" />
+    <icon src="www/res/icon/ios/icon-57-2x.png"         gap:platform="ios"        width="114" height="114" />
+    <icon src="www/res/icon/ios/icon-72-2x.png"         gap:platform="ios"        width="144" height="144" />
+    <icon src="www/res/icon/webos/icon-64.png"          gap:platform="webos" />
+    <icon src="www/res/icon/windows-phone/icon-48.png"  gap:platform="winphone" />
+    <icon src="www/res/icon/windows-phone/icon-173-tile.png" gap:platform="winphone"   gap:role="background" />
+
+    <!-- Define app splash screen for each platform. -->
+    <gap:splash src="www/res/screen/android/screen-ldpi-portrait.png"       gap:platform="android" gap:qualifier="port-ldpi" />
+    <gap:splash src="www/res/screen/android/screen-mdpi-portrait.png"       gap:platform="android" gap:qualifier="port-mdpi" />
+    <gap:splash src="www/res/screen/android/screen-hdpi-portrait.png"       gap:platform="android" gap:qualifier="port-hdpi" />
+    <gap:splash src="www/res/screen/android/screen-xhdpi-portrait.png"      gap:platform="android" gap:qualifier="port-xhdpi" />
+    <gap:splash src="www/res/screen/blackberry/screen-225.png"              gap:platform="blackberry" />
+    <gap:splash src="www/res/screen/ios/screen-iphone-portrait.png"         gap:platform="ios"     width="320" height="480" />
+    <gap:splash src="www/res/screen/ios/screen-iphone-portrait-2x.png"      gap:platform="ios"     width="640" height="960" />
+    <gap:splash src="www/res/screen/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios"     width="640" height="1136" />
+    <gap:splash src="www/res/screen/ios/screen-ipad-portrait.png"           gap:platform="ios"     width="768" height="1024" />
+    <gap:splash src="www/res/screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />
+    <gap:splash src="www/res/screen/windows-phone/screen-portrait.jpg"      gap:platform="winphone" />
+
+    <!--
+        Define access to external domains.
+
+        <access />            - a blank access tag denies access to all external resources.
+        <access origin="*" /> - a wildcard access tag allows access to all external resource.
+
+        Otherwise, you can specify specific domains:
+    -->
+    <access origin="*"/>
+    <!--
+        <access origin="http://phonegap.com" />                    - allow any secure requests to http://phonegap.com/
+        <access origin="http://phonegap.com" subdomains="true" />  - same as above, but including subdomains, such as http://build.phonegap.com/
+        <access origin="http://phonegap.com" browserOnly="true" /> - only allows http://phonegap.com to be opened by the child browser.
+    -->
+
+</widget>
