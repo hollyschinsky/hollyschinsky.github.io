@@ -26,10 +26,10 @@
             <div id="config">
                 <p>
                     <a href="#widget">
-                        &lt;widget <span class="attrib">xmlns=</span><span class="value">"http://www.w3.org/ns/widgets"</span>
-                                <span class="attrib indent">xmlns:gap=</span><span class="value">"http://phonegap.com/ns/1.0"</span>
-                                <span class="attrib indent">id=</span><span class="value">"com.phonegap.helloworld"</span>
-                                <span class="attrib">version=</span><span class="value">"1.0.0"&gt;</span>
+                        &lt;widget xmlns="http://www.w3.org/ns/widgets"
+                                <span class="indent">xmlns:gap="http://phonegap.com/ns/1.0"</span>
+                                <span class="indent">id="com.phonegap.helloworld"</span>
+                                version="1.0.0"&gt;
                     </a>
                 </p>
                 <br>
@@ -47,14 +47,14 @@
                 <br>
                 <p>
                     <a href="#author">
-                        &lt;author <span class="attrib">email=</span><span class="value">"support@phonegap.com"</span>
-                        <span class="attrib">href=</span><span class="value">"http://phonegap.com"</span>&gt;<span class="tag-value"> PhoneGap Team</span>&lt;/author&gt;
+                        &lt;author email="support@phonegap.com"</span>
+                        href="http://phonegap.com&gt;<span class="tag-value"> PhoneGap Team</span>&lt;/author&gt;
                     </a>
                 </p>
                 <br>
                 <p>
                     <a href="#content">
-                        &lt;content <span class="attrib">src=</span><span class="value">"index.html"/&gt;</span>
+                        &lt;content src="index.html"/&gt;
                     </a>
                 </p>
                 <br>
@@ -66,9 +66,11 @@
                 <br>
                 <p>
                     <a href="#platform">
-                        &lt;platform name="android"&gt;
-                        <div class="attrib">
-                            &lt;preference name="DisallowOverscroll" value="true" /&gt;
+                        &lt;platform name="android"&gt;<br>
+                        <div class="tab">
+                            &lt;!-- a preference specific to android only here --&gt;
+                            <!--<span class="pref"> &lt;preference</span> <span class="attrib">name=</span><span class="value">"DisallowOverscroll"</span>-->
+                            <!--<span class="attrib">value=</span><span class="value">"true"</span>/&gt;-->
                         </div>
                         &lt;/platform&gt;
                     </a>
@@ -78,7 +80,7 @@
                 <p>
                     <a href="#feature">
                         &lt;feature name="Device"&gt;
-                        <div class="attrib">
+                        <div class="tab">
                             &lt;param name="android-package" value="org.apache.cordova.device.Device" /&gt;
                         </div>
                         &lt;/feature&gt;
@@ -86,26 +88,25 @@
                 </p>
                 <br>
                 <p>
-                    <a href="#preference">
-                        &lt;preference name="Fullscreen" value="true"/&gt;
+                    <a href="#preference">&lt;!-- Core/Common Preferences --&gt;<br></a>
+                    <a href="#fullscreen">
+                        &lt;preference name="Fullscreen"
+                        value="true"/&gt;
                     </a>
-                    <!--<button id="moreBtn" type="button" class="btn btn-success btn-xs" data-toggle="collapse" title="More preferences"-->
-                            <!--data-target="#prefs">+</button>-->
 
-                <!--<p id="prefs" class="collapse out">-->
                     <br><a href="#overscroll">&lt;preference name="DisallowOverscroll" value="true"/&gt;</a>  <br>
                     <a href="#orientation">&lt;preference name="Orientation" value="landscape"/&gt;</a><br>
-                    <a href="#backgroundcolor">&lt;preference name="BackgroundColor" value="0xff0000ff"/&gt;</a><br>
                     <a href="#hidekeyboard">&lt;preference name="HideKeyboardFormAccessoryBar" value="false"/&gt;</a><br>
-                    <!--<a href="#fullscreen">&lt;preference name="Fullscreen" value="true"/&gt;</a><br>-->
-                <!--</p>-->
+                    <a href="#backgroundcolor">&lt;preference name="BackgroundColor" value="0xff0000ff"/&gt;</a><br>
+
                 <br>
-                <!--<code>iOS Preferences</code>-->
-                <!--&lt;!-- iOS PREFERENCES --&gt;-->
+
+
                 <button id="iosBtn" type="button" class="btn btn-success btn-xs" data-toggle="collapse" title="iOS preferences"
                         data-target="#iosPrefs">Show iOS Preferences</button>
 
                 <p id="iosPrefs" class="collapse out">
+                    &lt;!--iOS Preferences</code>--&gt;<br>
                     <a href="#enableviewportscale">&lt;preference name="EnableViewportScale" value="true"/&gt;</a>  <br>
                     <a href="#mediaplaybackrequires">&lt;preference name="MediaPlaybackRequiresUserAction" value="true"/&gt;</a><br>
                     <a href="#allowinlinemediaplayback">&lt;preference name="AllowInlineMediaPlayback" value="true"/&gt;</a><br>
@@ -119,15 +120,16 @@
                     <a href="#paginationmode">&lt;preference name="PaginationMode" value="unpaginated"/&gt;</a><br>
                     <a href="#uiwebviewdecleration">&lt;preference name="UIWebViewDecelerationSpeed" value="fast"/&gt;</a><br>
                 </p>
-                <!-- Android PREFERENCES -->
+                
                 <br>
                 <br>
-                <!--&lt;!-- ANDROID PREFERENCES --&gt;-->
-                <button id="androidBtn" type="button" class="btn btn-success btn-xs" data-toggle="collapse" title="Android preferences"
+
+                <button id="androidBtn" type="button" class="btn btn-info btn-xs" data-toggle="collapse" title="Android preferences"
                         data-target="#androidPrefs">Show Android Preferences</button>
 
 
                 <p id="androidPrefs" class="collapse out">
+                    &lt;!--Android Preferences</code>--&gt;<br>
                     <a href="#keeprunning">&lt;preference name="KeepRunning" value="false"/&gt;</a>  <br>
                     <a href="#loadurltimeoutvalue">&lt;preference name="LoadUrlTimeoutValue" value="10000"/&gt;</a><br>
                     <a href="#splashscreen">&lt;preference name="SplashScreen" value="mySplash"/&gt;</a><br>
@@ -228,7 +230,7 @@
                 <h4>DisallowOverscroll</h4>
                 Set to true if you don't want the interface to display any feedback when users scroll past the beginning or end of content.<br>
 
-                <strong>Default</strong>
+                <br><strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>false (boolean)</code></p>
                 </div>
@@ -246,19 +248,15 @@
                 <h4>Fullscreen</h4>
                 Set to true if to hide the status bar at the top of the screen.<br>
 
-                <strong>Default</strong>
+                <br><strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>false (boolean)</code> </p>
                 </div>
                 <strong>Supported Platforms</strong>
                 <div class="callout-platform callout">
-                    All platforms except iOS (see <a href="https://issues.apache.org/jira/browse/CB-6182"> here</a>)<br><br>
-                    * Use <a href="https://github.com/apache/cordova-plugin-statusbar/blob/master/doc/index.md">StatusBarPlugin for iOS</a>
+                    All platforms except iOS (see <a href="https://issues.apache.org/jira/browse/CB-6182"> here</a>)<br>
                 </div>
-                <div class="alert alert-success">
-                    On iOS, overscroll gestures cause content to bounce back to its original position.
-                    On Android, they produce a more subtle glowing effect along the top or bottom edge of the content.
-                </div>
+                <div class="alert alert-info">For iOS, you can use the <a href="https://github.com/apache/cordova-plugin-statusbar/blob/master/doc/index.md">StatusBarPlugin here</a></div>
             </div>
 
 
@@ -266,19 +264,14 @@
                 <h4>Orientation</h4>
                 Orientation allows you to lock orientation and prevent the interface from rotating in response to changes in orientation.<br>
 
-                <strong>Default</strong>
+                <br><strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>default, landscape, or portrait</code> where setting the value of <code>default</code> will assume both portrait and landscape</p>
                     <p class="alert-warning alert">Leave this setting out if you want to support the default platform-level value (typically portrait only).</p>
                 </div>
                 <strong>Supported Platforms</strong>
                 <div class="callout-platform callout">
-                    All except iOS (see <a href="https://issues.apache.org/jira/browse/CB-6182"> here</a>)
-                    * Use <a href="https://github.com/apache/cordova-plugin-statusbar/blob/master/doc/index.md">StatusBarPlugin for iOS</a>
-                </div>
-                <div class="alert alert-success">
-                    On iOS, overscroll gestures cause content to bounce back to its original position.
-                    On Android, they produce a more subtle glowing effect along the top or bottom edge of the content.
+                    All except iOS.
                 </div>
             </div>
 
@@ -287,31 +280,21 @@
                 Set the apps background color. Supports a four-byte hex value, with the first byte representing the alpha channel, and standard RGB values for the following three bytes.
 
                 For instance, this hex value specifies a shade of blue: <code>0xff0000ff</code>
-                <br>
+                <br><br>
 
-                <strong>Default</strong>
-                <div class="callout-info callout">
-                    <p><code>default, landscape, or portrait</code> where setting the value of <code>default</code> will assume both portrait and landscape</p>
-                    <p class="alert-warning alert">Leave this setting out if you want to support the default platform-level value (typically portrait only).</p>
-                </div>
                 <strong>Supported Platforms</strong>
                 <div class="callout-platform callout">
-                    Android. Overrides CSS otherwise available across all platforms, for example: <code>body {background-color:blue}</code>
+                    Android
                 </div>
-                <!--<div class="alert alert-success">-->
-                    <!--On iOS, overscroll gestures cause content to bounce back to its original position.-->
-                    <!--On Android, they produce a more subtle glowing effect along the top or bottom edge of the content.-->
-                <!--</div>-->
+                <div class="alert alert-info">You can override the CSS otherwise across all other platforms by using:<br> <code>body {background-color:blue}</code></div>
             </div>
 
             <div id="hidekeyboard" class="col col-md-10 hidediv">
                 <h4>HideKeyboardFormAccessoryBar</h4>
                 Set to true to hide the additional toolbar that appears above the keyboard, helping users navigate from one form input to another.
-
-                For instance, this hex value specifies a shade of blue: <code>0xff0000ff</code>
                 <br>
 
-                <strong>Default</strong>
+                <br><strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>false (boolean)</code> </p>
                 </div>
@@ -330,7 +313,7 @@
                 Place a viewport such as the following in the HTML to disable scaling and fit content flexibly within the rendering WebView:
                 &lt;meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no' /&gt;
 
-                <strong>Default</strong>
+                <br><strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>false (boolean)</code> </p>
                 </div>
@@ -648,8 +631,6 @@
                 </div>
             </div>
 
-
-
             <div id="loglevel" class="col col-md-10 hidediv">
                 <h4>LogLevel </h4>
                 Sets the minimum log level through which log messages from your application will be filtered.
@@ -712,57 +693,134 @@
                 </div>
 
 
-                <div class="callout callout-platform">
-                    The following configuration can be used to define single default icon which will be used for all platforms.
+                <!--<div class="callout callout-platform">-->
+                    <!--The following configuration can be used to define single default icon which will be used for all platforms.-->
+                    <!--<br>-->
+                    <!--<code>&lt;icon src="res/icon.png" /&gt;</code>-->
+                <!--</div>-->
+                <div class="callout callout-more">
+                    The following simple configuration can be used to define single default icon which will be used for all platforms.
                     <br>
                     <code>&lt;icon src="res/icon.png" /&gt;</code>
-                </div>
-                <div class="callout callout-more">
+
                     To define pixel perfect icons for each platform, surround your <code>&lt;icon&gt;</code> elements with the
-                    <code>&lt;platform&gt;</code> element with the following attributes per platform:
+                    <code>&lt;platform&gt;</code> element set to the platform name. Toggle the buttons below to see how to set the
+                    platform name and the specific attributes supproted for each of the platforms.
+                    <br><br>
 
                     <br>
-                    <code>&lt;platform name="android"&gt;<br>
-                        &lt;icon src="res/android/ldpi.png" density="ldpi" /&gt;<br>
-                        &lt;icon src="res/android/mdpi.png" density="mdpi" /&gt;<br>
-                        &lt;icon src="res/android/hdpi.png" density="hdpi" /&gt;<br>
-                        &lt;icon src="res/android/xhdpi.png" density="xhdpi" /&gt;<br>
+                    <button id="androidIconsBtn" type="button" class="btn btn-primary btn-xs" data-toggle="collapse" title="Android icons"
+                            data-target="#androidIcons">Android Icons</button><br>
+
+                    <div id="androidIcons" class="collapse out">
+                        <code>&lt;platform name="android"&gt;<br>
+                            <div class="tab"> &lt;icon src="res/android/ldpi.png" density="ldpi" /&gt;</div>
+                            <div class="tab">&lt;icon src="res/android/mdpi.png" density="mdpi" /&gt;</div>
+                            <div class="tab">&lt;icon src="res/android/hdpi.png" density="hdpi" /&gt;</div>
+                            <div class="tab">&lt;icon src="res/android/xhdpi.png" density="xhdpi" /&gt;</div>
                         &lt;platform/&gt;<br>
-                    </code>
+                        </code><br>
+                    </div>
 
-                    <code>&lt;platform name="ios"&gt;<br>
-                        iOS 8.0+<br>
-                        iPhone 6 Plus<br>
-                        &lt;icon src="res/ios/icon-60@3x.png" width="180" height="180" /&gt;<br>
-                        iOS 7.0+<br>
-                        iPhone / iPod Touch<br>
-                        &lt;icon src="res/ios/icon-60.png" width="60" height="60" /&gt;<br>
-                        &lt;icon src="res/ios/icon-60@2x.png" width="120" height="120" /&gt;<br>
-                        iPad<br>
-                        &lt;icon src="res/ios/icon-76.png" width="76" height="76"/&gt;<br>
-                        &lt;icon src="res/ios/icon-76@2x.png" width="152" height="152"/&gt;<br>
-                        iOS 6.1<br>
-                        <!-- Spotlight Icon -->
-                        &lt;icon src="res/ios/icon-40.png" width="40" height="40"/&gt;<br>
-                        &lt;icon src="res/ios/icon-40@2x.png" width="80" height="80"/&gt;<br>
-                        <!-- iPhone / iPod Touch -->
-                        &lt;icon src="res/ios/icon.png" width="57" height="57"/&gt;<br>
-                        &lt;icon src="res/ios/icon@2x.png" width="114" height="114"/&gt;<br>
-                        <!-- iPad -->
-                        &lt;icon src="res/ios/icon-72.png" width="72" height="72"/&gt;<br>
-                        &lt;icon src="res/ios/icon-72@2x.png" width="144" height="144"/&gt;<br>
-                        <!-- iPhone Spotlight and Settings Icon -->
-                        &lt;icon src="res/ios/icon-small.png" width="29" height="29"/&gt;<br>
-                        &lt;icon src="res/ios/icon-small@2x.png" width="58" height="58"/&gt;<br>
-                        <!-- iPad Spotlight and Settings Icon -->
-                        &lt;icon src="res/ios/icon-50.png" width="50" height="50"/&gt;<br>
-                        &lt;icon src="res/ios/icon-50@2x.png" width="100" height="100"/&gt;<br>
+                    <br>
+                    <button id="iosIconsBtn" type="button" class="btn btn-info btn-xs" data-toggle="collapse" title="iOS icons"
+                            data-target="#iosIcons">iOS Icons</button><br>
+
+                    <div id="iosIcons" class="collapse out">
+                        <code>&lt;platform name="ios"&gt;<br>
+                            <div class="tab"><strong>iOS 8.0+</strong></div>
+                            <div class="tab"><mark>iPhone / iPod Touch</mark></div>
+                            <div class="tab">&lt;icon src="res/ios/icon-60@3x.png" width="180" height="180" /&gt;</div>
+                            <div class="tab"><strong>iOS 7.0+</strong></div>
+                            <div class="tab"><mark>iPhone / iPod Touch</mark></div>
+                            <div class="tab">&lt;icon src="res/ios/icon-60.png" width="60" height="60" /&gt;</div>
+                            <div class="tab">&lt;icon src="res/ios/icon-60@2x.png" width="120" height="120" /&gt;</div>
+                            <div class="tab"><mark>iPad</mark></div>
+                            <div class="tab">&lt;icon src="res/ios/icon-76.png" width="76" height="76"/&gt;</div>
+                            <div class="tab">&lt;icon src="res/ios/icon-76@2x.png" width="152" height="152"/&gt;</div>
+                            <div class="tab"><strong>iOS 6.1</strong></div>
+                            <div class="tab"><mark>Spotlight Icon</mark></div>
+                            <div class="tab">&lt;icon src="res/ios/icon-40.png" width="40" height="40"/&gt;</div>
+                            <div class="tab">&lt;icon src="res/ios/icon-40@2x.png" width="80" height="80"/&gt;</div>
+                            <div class="tab"><mark>iPhone / iPod Touch</mark></div>
+                            <div class="tab">&lt;icon src="res/ios/icon.png" width="57" height="57"/&gt;</div>
+                            <div class="tab">&lt;icon src="res/ios/icon@2x.png" width="114" height="114"/&gt;</div>
+                            <div class="tab"><mark>iPad</mark></div>
+                            <div class="tab">&lt;icon src="res/ios/icon-72.png" width="72" height="72"/&gt;</div>
+                            <div class="tab">&lt;icon src="res/ios/icon-72@2x.png" width="144" height="144"/&gt;</div>
+                            <div class="tab"><mark>iPhone Spotlight and Settings Icon</mark></div>
+                            <div class="tab">&lt;icon src="res/ios/icon-small.png" width="29" height="29"/&gt;</div>
+                            <div class="tab">&lt;icon src="res/ios/icon-small@2x.png" width="58" height="58"/&gt;</div>
+                            <div class="tab"><mark> iPad Spotlight and Settings Icon</mark></div>
+                            <div class="tab">&lt;icon src="res/ios/icon-50.png" width="50" height="50"/&gt;</div>
+                            <div class="tab">&lt;icon src="res/ios/icon-50@2x.png" width="100" height="100"/&gt;</div>
                         &lt;platform/&gt;<br>
-                    </code>
+                        </code>
+                    </div>
+                    <br>
+                    <button id="amazonIconsBtn" type="button" class="btn btn-success btn-xs" data-toggle="collapse" title="Amazon icons"
+                            data-target="#amazonIcons">Amazon FireOS Icons</button><br>
+
+                    <div id="amazonIcons" class="collapse out">
+                        <code>&lt;platform name="amazon-fireos"&gt;<br>
+                            <div class="tab">&lt;icon src="res/android/ldpi.png" density="ldpi" /&gt;</div>
+                            <div class="tab">&lt;icon src="res/android/mdpi.png" density="mdpi" /&gt;</div>
+                            <div class="tab">&lt;icon src="res/android/hdpi.png" density="hdpi" /&gt;</div>
+                            <div class="tab">&lt;icon src="res/android/xhdpi.png" density="xhdpi" /&gt;</div>
+                            &lt;platform/&gt;<br>
+                        </code>
+                    </div>
 
 
-                </div>
+                    <br>
+                    <button id="bbIconsBtn" type="button" class="btn btn-primary btn-xs" data-toggle="collapse" title="Blackberry icons"
+                            data-target="#bbIcons">Blackberry10 Icons</button><br>
 
+                    <div id="bbIcons" class="collapse out">
+                        <code>&lt;platform name="blackberry10"&gt;<br>
+                            <div class="tab">&lt;icon src="res/bb10/icon-86.png"/&gt;</div>
+                            <div class="tab">&lt;icon src="res/bb10/icon-150.png"/&gt;</div>
+                            &lt;platform/&gt;<br>
+                        </code>
+                    </div>
+
+                    <br>
+                    <button id="firefoxIconsBtn" type="button" class="btn btn-info btn-xs" data-toggle="collapse" title="FirefoxOS icons"
+                            data-target="#firefoxIcons">FirefoxOS Icons</button><br>
+
+                    <div id="firefoxIcons" class="collapse out">
+                        <code>&lt;platform name="firefoxos"&gt;<br>
+                            <div class="tab">&lt;icon  src="res/ff/logo.png" width="60" height="60"/&gt;</div>
+                            &lt;platform/&gt;<br>
+                        </code>
+                    </div>
+
+                    <br>
+                    <button id="wp8Btn" type="button" class="btn btn-success btn-xs" data-toggle="collapse" title="Windows Phone8 icons"
+                            data-target="#wp8Icons">Windows Phone8 Icons</button><br>
+
+                    <div id="wp8Icons" class="collapse out">
+                        <code>&lt;platform name="wp8"&gt;<br>
+                            <div class="tab">&lt;icon src="res/wp/ApplicationIcon.png" width="99" height="99"/&gt;</div>
+                            <div class="tab"><mark>tile image</mark></div>
+                            <div class="tab">&lt;icon src="res/wp/Background.png" width="159" height="159"/&gt;</div>
+                            &lt;platform/&gt;<br>
+                        </code>
+                    </div>
+
+                    <br>
+                    <button id="windowsBtn" type="button" class="btn btn-primary btn-xs" data-toggle="collapse" title="Windows8 icons"
+                            data-target="#windowsIcons">Windows8 Icons</button><br>
+
+                    <div id="windowsIcons" class="collapse out">
+                        <code>&lt;platform name="wp8"&gt;<br>
+                            <div class="tab">&lt;icon src="res/windows8/logo.png" width="150" height="150"/&gt;</div>
+                            <div class="tab">&lt;icon src="res/windows8/smalllogo.png" width="30" height="30"/&gt;</div>
+                            <div class="tab">&lt;icon src="res/windows8/storelogo.png" width="50" height="50"/&gt;</div>
+                            &lt;platform/&gt;<br>
+                        </code>
+                    </div>
+                 </div>
             </div>
 
             <div id="splash" class="col col-md-12 hidediv scroll">
@@ -784,23 +842,105 @@
 
                 <div class="callout callout-platform">
                     To define pixel perfect images for each platform, surround your <code>&lt;splash&gt;</code> elements with the
-                    <code>&lt;platform&gt;</code> element with the following attributes per platform:<br>
-                    <code>
-                        &lt;platform name="android"&gt;<br>
-                        &lt;splash src="res/screen/android/splash-land-hdpi.png" density="land-hdpi"/&gt;<br>
-                        &lt;splash src="res/screen/android/splash-land-ldpi.png" density="land-ldpi"/&gt;<br>
-                        &lt;splash src="res/screen/android/splash-land-mdpi.png" density="land-mdpi"/&gt;<br>
-                        &lt;splash src="res/screen/android/splash-land-xhdpi.png" density="land-xhdpi"/&gt;<br>
-                        <br>
-                        &lt;splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi"/&gt;<br>
-                        &lt;splash src="res/screen/android/splash-port-ldpi.png" density="port-ldpi"/&gt;<br>
-                        &lt;splash src="res/screen/android/splash-port-mdpi.png" density="port-mdpi"/&gt;<br>
-                        &lt;splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi"/&gt;<br>
-                        &lt;platform/&gt;<br>
-                    </code>
+                    <code>&lt;platform&gt;</code> element with the following attributes per platform as shown when expanding with the
+                    buttons for the desired platform below:<br><br>
+
+                    <button id="androidSplashBtn" type="button" class="btn btn-primary btn-xs" data-toggle="collapse" title="Android Splash"
+                            data-target="#androidSplash">Android Splash Images</button><br>
+
+                    <div id="androidSplash" class="collapse out">
+
+                        <code>
+                            &lt;platform name="android"&gt;<br>
+                            <div class="tab"><mark>Images are determined by density. The following are supported:</mark></div>
+                            <div class="tab">&lt;splash src="res/screen/android/splash-land-hdpi.png" density="land-hdpi"/&gt;</div>
+                            <div class="tab">&lt;splash src="res/screen/android/splash-land-ldpi.png" density="land-ldpi"/&gt;</div>
+                            <div class="tab">&lt;splash src="res/screen/android/splash-land-mdpi.png" density="land-mdpi"/&gt;</div>
+                            <div class="tab">&lt;splash src="res/screen/android/splash-land-xhdpi.png" density="land-xhdpi"/&gt;</div>
+                            <br>
+                            <div class="tab">&lt;splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi"/&gt;</div>
+                            <div class="tab">&lt;splash src="res/screen/android/splash-port-ldpi.png" density="port-ldpi"/&gt;</div>
+                            <div class="tab">&lt;splash src="res/screen/android/splash-port-mdpi.png" density="port-mdpi"/&gt;</div>
+                            <div class="tab">&lt;splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi"/&gt;</div>
+                            &lt;platform/&gt;<br>
+                        </code>
+                    </div>
+
+                    <br>
+                    <button id="bbSplashBtn" type="button" class="btn btn-info btn-xs" data-toggle="collapse" title="Blackberry Splash"
+                            data-target="#bbSplash">Blackberry10 Splash Images</button><br>
+
+
+                    <div id="bbSplash" class="collapse out">
+
+                        <code>
+                            &lt;platform name="blackberry10"&gt;<br>
+                            <div class="tab"><mark>Add a rim:splash element for each resolution and locale you wish</mark></div>
+                            <div class="tab"><mark>http://developer.blackberry.com/html5/documentation/rim_splash_element.html</mark></div>
+                            <div class="tab">&lt;rim:splash src="res/screen/windows8/splashscreen.png"/&gt;</div>
+
+                            &lt;platform/&gt;<br>
+                        </code>
+                    </div>
+                    <br>
+                    <button id="iosSplashBtn" type="button" class="btn btn-success btn-xs" data-toggle="collapse" title="iOS Splash"
+                            data-target="#iosSplash">iOS Splash Images</button><br>
+
+                    <div id="iosSplash" class="collapse out">
+
+                        <code>
+                            &lt;platform name="ios"&gt;<br>
+                            <div class="tab"><mark>Images are determined by width and height. The following are supported:</mark></div>
+                            <div class="tab">&lt;splash src="res/screen/ios/Default~iphone.png" width="320" height="480"/&gt;</div>
+                            <div class="tab">&lt;splash src="res/screen/ios/Default@2x~iphone.png" width="640" height="960"/&gt;</div>
+                            <div class="tab">&lt;splash src="res/screen/ios/Default-Portrait~ipad.png" width="768" height="1024"/&gt;</div>
+                            <div class="tab">&lt;splash src="res/screen/ios/Default-Portrait@2x~ipad.png" width="1536" height="2048"/&gt;</div>
+                            <br>
+                            <div class="tab">&lt;splash src="res/screen/ios/Default-Landscape~ipad.png" width="1024" height="768"/&gt;</div>
+                            <div class="tab">&lt;splash src="res/screen/ios/Default-Landscape@2x~ipad.png" width="2048" height="1536"/&gt;</div>
+                            <div class="tab">&lt;splash src="res/screen/ios/Default-568h@2x~iphone.png" width="640" height="1136"/&gt;</div>
+                            <div class="tab">&lt;splash src="res/screen/ios/Default-667h.png" width="750" height="1334"/&gt;</div>
+
+                            <div class="tab">&lt;splash src="res/screen/ios/Default-736h.png" width="1242" height="2208"/&gt;</div>
+                            <div class="tab">&lt;splash src="res/screen/ios/Default-Landscape-736h.png" width="2208" height="1242"/&gt;</div>
+                            &lt;platform/&gt;<br>
+                        </code>
+                    </div>
+                    <br>
+                    <button id="win8SplashBtn" type="button" class="btn btn-primary btn-xs" data-toggle="collapse" title="Windows8 Splash"
+                            data-target="#win8Splash">Windows8 Splash Images</button><br>
+
+
+                    <div id="win8Splash" class="collapse out">
+
+                        <code>
+                            &lt;platform name="windows8"&gt;<br>
+                            <div class="tab"><mark>Images are determined by width and height. The following are supported:</mark></div>
+                            <div class="tab">&lt;splash src="res/screen/windows8/splashscreen.png" width="620" height="300"/&gt;</div>
+
+                            &lt;platform/&gt;<br>
+                        </code>
+                    </div>
+                    <br>
+                    <button id="wp8SplashBtn" type="button" class="btn btn-info btn-xs" data-toggle="collapse" title="WP8 Splash"
+                            data-target="#wp8Splash">WP8 Splash Images</button><br>
+
+
+                    <div id="wp8Splash" class="collapse out">
+
+                        <code>
+                            &lt;platform name="wp8"&gt;<br>
+                            <div class="tab"><mark>Images are determined by width and height. The following are supported:</mark></div>
+                            <div class="tab">&lt;splash src="res/screen/wp8/SplashScreenImage.jpg" width="768" height="1280"/&gt;</div>
+                            &lt;platform/&gt;<br>
+                        </code>
+                    </div>
+
+                    <br>
+
+
                 </div>
             </div>
-
 
             <div id="access" class="col col-md-10 hidediv">
                 <h4>Access</h4>define the set of external domains the app is allowed to communicate with. The default value shown above allows it to access any server.

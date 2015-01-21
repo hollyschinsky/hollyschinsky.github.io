@@ -69,10 +69,15 @@ a[href] p {
 }
 .attrib {
     color: #994992;
-    text-indent: 15px;
+    /*text-indent: 15px;*/
 }
 a {
     color: #053999;
+}
+a:hover {
+    /*border: 1px solid #17996e;*/
+    background-color: #fffacd;
+    text-decoration: none;
 }
 .tag-value {
     color: #323232;
@@ -92,4 +97,10 @@ a {
 }
 .min {
     margin-right: 20px;
+}
+.tab {
+    text-indent: 30px;
+}
+.pref {
+    color: #33b9b3;
 }
