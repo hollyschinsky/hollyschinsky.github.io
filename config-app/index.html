@@ -183,7 +183,7 @@
 
         <div id="desc">
             <div id="widget" class="col col-md-10 hidediv">
-                <h4>Widget</h4>The root element of the config.xml with some identifying attributes.
+                <h4>Widget</h4>The root element of the config.xml with some identifying attributes:<br>
                 <div class="callout-info callout">
                     <p><i>id</i> Reverse-domain identifier for the app</p>
                     <p><i>version</i> Full version number expressed in major/minor/patch notation</p>
@@ -209,14 +209,14 @@
             </div>
 
             <div id="content" class="col col-md-10 hidediv">
-                <h4>Content</h4>Defines the app's starting page in the top-level web assets directory.
+                <h4>Content</h4>Defines the application's starting page in the top-level web assets directory (<i>www</i> folder).
                 <div class="callout-info callout">
                     <p><i>src</i> The file name/location of the starting page. Defaults to index.html.</p>
                 </div>
             </div>
 
             <div id="preference" class="col col-md-10 hidediv">
-                <h4>Preference</h4> Sets various options as pairs of name/value attributes.
+                <h4>Preference</h4> Sets different options for your application as pairs of name/value attributes.
                 <p class="alert-warning"> Preference name is <bold>case-insensitive</bold>.</p>
                 <br><br><strong class="label label-warning">IMPORTANT:</strong> Most preferences are unique to a platform or subset of platforms (iOS, Android, Win, PhoneGap Build etc).
                 <div class="callout-info callout">
@@ -262,7 +262,7 @@
 
             <div id="orientation" class="col col-md-10 hidediv">
                 <h4>Orientation</h4>
-                Orientation allows you to lock orientation and prevent the interface from rotating in response to changes in orientation.<br>
+                Orientation allows you to lock the orientation of the device the app is running on and prevent the interface from rotating in response to changes in orientation.<br>
 
                 <br><strong>Default</strong>
                 <div class="callout-info callout">
@@ -277,7 +277,7 @@
 
             <div id="backgroundcolor" class="col col-md-10 hidediv">
                 <h4>BackgroundColor</h4>
-                Set the apps background color. Supports a four-byte hex value, with the first byte representing the alpha channel, and standard RGB values for the following three bytes.
+                Sets the application's background color. This preference supports a four-byte hex value, with the first byte representing the alpha channel, and standard RGB values for the following three bytes.
 
                 For instance, this hex value specifies a shade of blue: <code>0xff0000ff</code>
                 <br><br>
@@ -306,10 +306,22 @@
 
             <!-- iOS Preferences -->
 
+            <!-- MAKE NOTE ABOUT THESE AND GENERAL ONES ADDED DUE TO PLUGINS! -->
+            <!--<preference name="AutoHideSplashScreen" value="true" />-->
+            <!--<preference name="FadeSplashScreen" value="true" />-->
+            <!--<preference name="FadeSplashScreenDuration" value=".25" />-->
+            <!--<preference name="ShowSplashScreenSpinner" value="true" />-->
+            <!--Auto-added-->
+            <!--<feature name="LocalStorage">-->
+                <!--<param name="ios-package" value="CDVLocalStorage" />-->
+            <!--</feature>-->
+
+
+
             <div id="enableviewportscale" class="col col-md-10 hidediv">
                 <h4>EnableViewportScale</h4>
                 Set to true to allow a viewport meta tag to either disable or restrict the range of user scaling, which is enabled by default.
-                <br>
+                <br><br>
                 Place a viewport such as the following in the HTML to disable scaling and fit content flexibly within the rendering WebView:
                 &lt;meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no' /&gt;
 
@@ -326,7 +338,7 @@
             <div id="mediaplaybackrequires" class="col col-md-10 hidediv">
                 <h4>MediaPlaybackRequiresUserAction</h4>
                 Set to true to prevent HTML5 videos or audios from playing automatically with the autoplay attribute or via JavaScript.
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>false (boolean)</code> </p>
@@ -341,7 +353,7 @@
                 <h4>AllowInlineMediaPlayback</h4>
                 Set to true to allow HTML5 media playback to appear inline within the screen layout, using browser-supplied controls rather than native controls. For this to work, add the
                 <code>webkit-playsinline</code> attribute to any <code>&lt;video&gt;</code> elements.
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>false (boolean)</code> </p>
@@ -356,7 +368,7 @@
                 <h4>BackupWebStorage</h4>
                 Set to <code>cloud</code> to allow web storage data to backup via iCloud. Set to <code>local</code> to allow only local backups via iTunes sync. Set to <code>none</code> prevent web storage backups.
                 <code>webkit-playsinline</code> attribute to any <code>&lt;video&gt;</code> elements.
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>cloud (string)</code></p>
@@ -371,7 +383,7 @@
             <div id="topactivityindicator" class="col col-md-10 hidediv">
                 <h4>TopActivityIndicator</h4>
                  Controls the appearance of the small spinning icon in the status bar that indicates significant processor activity.
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>gray (string)</code></p>
@@ -386,7 +398,7 @@
             <div id="keyboardrequires" class="col col-md-10 hidediv">
                 <h4>KeyboardDisplayRequiresUserAction</h4>
                 Set to false to allow the keyboard to appear when calling focus() on form inputs.
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>true (boolean)</code> </p>
@@ -400,7 +412,7 @@
             <div id="suppressesincremrender" class="col col-md-10 hidediv">
                 <h4>SuppressesIncrementalRendering</h4>
                 Set to <code>true</code> to wait until all content has been received before it renders to the screen.
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>false (boolean)</code> </p>
@@ -415,7 +427,7 @@
             <div id="gapbetweenpages" class="col col-md-10 hidediv">
                 <h4>GapBetweenPages</h4>
                 The size of the gap, in points, between pages.
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>0 (float)</code> </p>
@@ -433,7 +445,7 @@
                 <code>topToBottom or bottomToTop</code>code, this property represents the height of each page. The default value is 0,
                 which means the layout uses the size of the viewport to determine the dimensions of the page.
 
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>0 (float)</code> </p>
@@ -450,7 +462,7 @@
                 regarding column and page-breaking are honored or ignored.
 
                 When this property is set to <code>column</code>, the content respects the CSS properties related to column-breaking in place of page-breaking.
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>page (string)</code> </p>
@@ -470,7 +482,7 @@
                 If set to a paginated form, this property toggles a paginated layout on the content, causing the web view to use the values of
                 <code>PageLength and GapBetweenPages</code> to re-layout its content.
 
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>unpaginated (string)</code> </p>
@@ -487,7 +499,7 @@
                 This property controls the deceleration speed of momentum scrolling. <code>normal</code>
                 is the default speed for most native apps and <code>fast</code> is the default for Mobile Safari.
 
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>normal (string)</code> </p>
@@ -504,7 +516,7 @@
                 Determines whether the application stays running in the background even after a pause event fires. Setting this to
                 <code>false</code> does not kill the app after a pause event, but simply halts execution of code within the cordova
                 webview while the app is in the background.
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>true (boolean)</code> </p>
@@ -518,7 +530,7 @@
             <div id="loadurltimeoutvalue" class="col col-md-10 hidediv">
                 <h4>LoadUrlTimeoutValue</h4>
                 When loading a page, the amount of time to wait before throwing a timeout error.
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>20000 (milliseconds)</code> </p>
@@ -533,7 +545,7 @@
                 <h4>SplashScreen</h4>
                 The name of the file minus its extension in the res/drawable directory.
                 Various assets must share this common name in various subdirectories.
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>splash (string)</code> </p>
@@ -547,7 +559,7 @@
             <div id="splashscreendelay" class="col col-md-10 hidediv">
                 <h4>SplashScreenDelay</h4>
                 The amount of time the splash screen image displays.
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>3000 (milliseconds)</code> </p>
@@ -561,7 +573,7 @@
             <div id="inappbrowserstorageenabled" class="col col-md-10 hidediv">
                 <h4>InAppBrowserStorageEnabled</h4>
                 Controls whether pages opened within an InAppBrowser can access the same localStorage and WebSQL storage as pages opened with the default browser.
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>true (boolean)</code> </p>
@@ -577,7 +589,7 @@
                 If set, displays a dialog with the specified title and message, and a spinner, when loading the first page of an
                 application. The title and message are separated by a comma in this value string, and that comma is removed before
                 the dialog is displayed.
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>null (string)</code> </p>
@@ -592,7 +604,7 @@
             <div id="loadingpagedialog" class="col col-md-10 hidediv">
                 <h4>LoadingPageDialog </h4>
                 The same as LoadingDialog, but for loading every page after the first page in the application.
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>null (string)</code> </p>
@@ -606,7 +618,7 @@
             <div id="errorurl" class="col col-md-10 hidediv">
                 <h4>ErrorUrl </h4>
                 If set, will display the referenced page upon an error in the application instead of a dialog with the title "Application Error".
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>null (url)</code> </p>
@@ -620,7 +632,7 @@
             <div id="showtitle" class="col col-md-10 hidediv">
                 <h4>ShowTitle </h4>
                 Show the title at the top of the screen.
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>false (boolean)</code> </p>
@@ -649,7 +661,7 @@
             <div id="setfullscreen" class="col col-md-10 hidediv">
                 <h4>SetFullscreen </h4>
                 Same as the Fullscreen parameter in the global configuration of this xml file. This Android-specific element is deprecated in favor of the global Fullscreen element, and will be removed in a future version.
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>false (boolean)</code> </p>
@@ -664,7 +676,7 @@
             <div id="androidlaunchmode" class="col col-md-10 hidediv">
                 <h4>AndroidLaunchMode </h4>
                 Sets the Activity <code>android:launchMode</code> attribute. This changes what happens when the app is launched from app icon or intent and is already running.
-                <br>
+                <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>singleTop (string)</code> </p>
@@ -955,23 +967,26 @@
                 <h4>Feature</h4> Used for the specific case of updating the platform-level config.xml to include a certain plugin or customization
                 specific to that platform.
 
-                <div class="alert alert-danger">Not typically used with the CLI. </div>
-
                 <div class="callout-info callout">
                     <p><i>name</i> The name of a specific feature, typically a plugin API to access.</p><br>
                     <strong>Child elements</strong>
-                        <p><i>param</i> The name of the parameter to set a name and value for.</p>
+                        <br><p><i>param</i> The name of the parameter to set a name and value for.</p>
                         <ul>
                             <li><i>name</i> The name of the parameter to set a name and value for.</li>
                             <li><i>value</i> The name of the parameter to set a name and value for.</li>
                         </ul>
                 </div>
+
+                <div class="alert alert-danger">Not typically used with the CLI. </div>
+
             </div>
 
             <div id="platform" class="col col-md-10 hidediv">
                 <h4>Platform</h4>
-                Use this element to specify configuration that should only appear in a single platform-specific config.xml file.
-                <br>
+                Use this element to specify configuration that should only appear in a single platform-specific <b>config.xml</b> file. The platform
+                specific <b>config.xml</b> used at runtime (for the iOS platform it resides at: ~/MyMobileApp/platforms/ios/MyMobileApp/config.xml
+                and for the Android platform it resides at: ~/MyMobileApp/platforms/android/assets/www/index.html). This will get copied into
+                the platform-specific folder if specified in the root config.xml.
                 For instance, if you wanted to specify a preference for android only, surround it by this element with the platform
                 <code>name</code> attribute set to <bold>android</bold>.
 
