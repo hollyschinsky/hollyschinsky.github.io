@@ -104,3 +104,11 @@ a:hover {
 .pref {
     color: #33b9b3;
 }
+/*.required:before {*/
+    /*color: red;*/
+    /*content: "*";*/
+/*}*/
+.required {
+    color: red;
+
+}

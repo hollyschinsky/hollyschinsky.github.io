@@ -15,7 +15,6 @@
     <h3 class="title">Configuring PhoneGap</h3>
         <div class="col col-md-6">
 
-
         <div class="alert alert-info min">Hover over any element below for specific configuration details. These elements <mark>apply when using the PhoneGap or Cordova CLI</mark>,
         if you're using PhoneGap Build, please see the <a href="http://docs.build.phonegap.com/en_US/configuring_config_file_element.md.html#Config%20File%20Elements">official PhoneGap Build Guide</a>. </div>
             <!-- Border container for config source -->
@@ -28,8 +27,8 @@
                     <a href="#widget">
                         &lt;widget xmlns="http://www.w3.org/ns/widgets"
                                 <span class="indent">xmlns:gap="http://phonegap.com/ns/1.0"</span>
-                                <span class="indent">id="com.phonegap.helloworld"</span>
-                                version="1.0.0"&gt;
+                                id="com.phonegap.helloworld"
+                                <span class="indent">version="1.0.0"&gt;</span>
                     </a>
                 </p>
                 <br>
@@ -48,7 +47,7 @@
                 <p>
                     <a href="#author">
                         &lt;author email="support@phonegap.com"</span>
-                        href="http://phonegap.com&gt;<span class="tag-value"> PhoneGap Team</span>&lt;/author&gt;
+                        href="http://phonegap.com"&gt;<span class="tag-value"> PhoneGap Team</span>&lt;/author&gt;
                     </a>
                 </p>
                 <br>
@@ -122,7 +121,6 @@
                 </p>
                 
                 <br>
-                <br>
 
                 <button id="androidBtn" type="button" class="btn btn-info btn-xs" data-toggle="collapse" title="Android preferences"
                         data-target="#androidPrefs">Show Android Preferences</button>
@@ -143,13 +141,20 @@
                     <a href="#setfullscreen">&lt;preference name="SetFullscreen" value="false"/&gt;</a><br>
                     <a href="#androidlaunchmode">&lt;preference name="AndroidLaunchMode" value="singleTop"/&gt;</a><br>
                 </p>
-
-
-
                 <br>
+                <br>
+                <button id="bbBtn" type="button" class="btn btn-primary btn-xs" data-toggle="collapse" title="BlackBerry preferences"
+                        data-target="#bbPrefs">Show BlackBerry 10 Preferences</button>
+
+                <p id="bbPrefs" class="collapse out">
+                    &lt;!--BlackBerry 10 Preferences</code>--&gt;<br>
+                    <a href="#childbrowser">&lt;preference name="ChildBrowser" value="disable"/&gt;</a>  <br>
+                    <a href="#popupblocker">&lt;preference name="PopupBlocker" value="enable""/&gt;</a><br>
+                    <a href="#websecurity">&lt;preference name="WebSecurity" value="disable"/&gt;</a><br>
+                </p>
 
                 <!-- ICONS and SPLASH -->
-                <br>
+                <br><br>
                 <p>
                     <a href="#icon">
                         &lt;icon src="res/ios/icon.png" platform="ios" width="57" height="57" density="mdpi"&gt;
@@ -170,9 +175,12 @@
                     </a>
                 </p>
                 <br>
+                <p>
+                    <a href="#widget2">
+                        &lt;/widget&gt;
+                    </a>
+                </p>
                 <br>
-
-
 
             </div>
          </div>
@@ -189,10 +197,10 @@
             <div id="widget" class="col col-md-10 hidediv">
                 <h4>Widget</h4>The root element of the config.xml with some identifying attributes:<br>
                 <div class="callout-info callout">
-                    <p><i>id</i> Reverse-domain identifier for the app</p>
-                    <p><i>version</i> Full version number expressed in major/minor/patch notation</p>
-                    <p><i>versionCode</i> Android only - internal version number (more details <a href="http://developer.android.com/tools/publishing/versioning.html">here</a>).</p>
-                    <p><i>cfBundleVersion</i> iOS only - internal version number</p>
+                    <p><i>id</i> <span class="required">(required)</span> Reverse-domain identifier for the app</p>
+                    <p><i>version</i> <span class="required">(required)</span>  Full version number expressed in major/minor/patch notation</p>
+                    <p><i>versionCode</i> (Android only) Internal version number (more details <a href="http://developer.android.com/tools/publishing/versioning.html">here</a>).</p>
+                    <p><i>cfBundleVersion</i> (iOS only) Internal version number</p>
                 </div>
             </div>
 
@@ -213,7 +221,7 @@
             </div>
 
             <div id="content" class="col col-md-10 hidediv">
-                <h4>Content</h4>Defines the application's starting page in the top-level web assets directory (<i>www</i> folder).
+                <h4>Content</h4>Optional element that defines the application's starting page in the top-level web assets directory (<i>www</i> folder).
                 <div class="callout-info callout">
                     <p><i>src</i> The file name/location of the starting page. Defaults to index.html.</p>
                 </div>
@@ -245,7 +253,9 @@
                 <div class="alert alert-success">
                     On iOS, overscroll gestures cause content to bounce back to its original position.
                     On Android, they produce a more subtle glowing effect along the top or bottom edge of the content.
+                    This property was renamed from <code>UIWebViewBounce</code>.
                 </div>
+
             </div>
 
             <div id="fullscreen" class="col col-md-10 hidediv">
@@ -270,12 +280,23 @@
 
                 <br><strong>Default</strong>
                 <div class="callout-info callout">
-                    <p><code>default, landscape, or portrait</code> where setting the value of <code>default</code> will assume both portrait and landscape</p>
+                    <p><code>default, landscape, or portrait</code> where setting the value of <code>default</code> will assume both portrait and landscape</p><br>
                     <p class="alert-warning alert">Leave this setting out if you want to support the default platform-level value (typically portrait only).</p>
                 </div>
                 <strong>Supported Platforms</strong>
                 <div class="callout-platform callout">
-                    All except iOS.
+                    All except iOS. For iOS you must modify the application plist file found in the Resources folder of the iOS project. You can add it manually to the plist source with:
+                    <br><br>
+                    <code>
+                        &lt;key&gt;UISupportedInterfaceOrientations&lt;/key&gt;<br>
+                        &lt;array&gt;<br>
+                        <span class="indent">&lt;string&gt;UIInterfaceOrientationPortrait &lt;/string&gt;</span><br>
+                        <span class="indent"> &lt;string&gt;UIInterfaceOrientationLandscapeLeft&lt;/string&gt;</span><br>
+                        <span class="indent"> &lt;string&gt;UIInterfaceOrientationPortraitUpsideDown&lt;/string&gt;</span><br>
+                        <span class="indent">&lt;string&gt;UIInterfaceOrientationLandscapeRight&lt;/string&gt;</span><br>
+                        &lt;/array&gt;
+                    </code><br><br>
+                    Or if you open the .plist file in XCode, simply add the keys and values by clicking the + sign and adding those desired.
                 </div>
             </div>
 
@@ -290,7 +311,7 @@
                 <div class="callout-platform callout">
                     Android
                 </div>
-                <div class="alert alert-info">You can override the CSS otherwise across all other platforms by using:<br> <code>body {background-color:blue}</code></div>
+                <div class="alert alert-info">For other platforms you can override the CSS by using something like:<br> <code>body { background-color:blue }</code></div>
             </div>
 
             <div id="hidekeyboard" class="col col-md-10 hidediv">
@@ -304,7 +325,9 @@
                 </div>
                 <strong>Supported Platforms</strong>
                 <div class="callout-platform callout">
-                    Android, iOS
+                    BlackBerry, iOS<br><br>
+
+                    * Requires the <a href="https://github.com/apache/cordova-plugins/tree/master/keyboard">Keyboard plugin</a> for iOS.
                 </div>
             </div>
 
@@ -319,7 +342,6 @@
             <!--<feature name="LocalStorage">-->
                 <!--<param name="ios-package" value="CDVLocalStorage" />-->
             <!--</feature>-->
-
 
 
             <div id="enableviewportscale" class="col col-md-10 hidediv">
@@ -375,7 +397,7 @@
                 <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
-                    <p><code>cloud (string)</code></p>
+                    <p><code>cloud (string)</code></p><br>
                     Valid values are <code>none, local and cloud</code>
                 </div>
                 <strong>Supported Platforms</strong>
@@ -390,7 +412,7 @@
                 <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
-                    <p><code>gray (string)</code></p>
+                    <p><code>gray (string)</code></p><br>
                     Valid values are <code>whiteLarge, white and gray</code>
                 </div>
                 <strong>Supported Platforms</strong>
@@ -469,7 +491,7 @@
                 <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
-                    <p><code>page (string)</code> </p>
+                    <p><code>page (string)</code> </p><br>
                     Valid values are <code>page and column</code>.
                 </div>
                 <strong>Supported Platforms</strong>
@@ -489,7 +511,7 @@
                 <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
-                    <p><code>unpaginated (string)</code> </p>
+                    <p><code>unpaginated (string)</code> </p><br>
                     Valid values are <code>unpaginated, leftToRight, topToBottom, bottomToTop, and rightToLeft</code>.
                 </div>
                 <strong>Supported Platforms</strong>
@@ -506,7 +528,7 @@
                 <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
-                    <p><code>normal (string)</code> </p>
+                    <p><code>normal (string)</code> </p><br>
                     Valid values are <code>normal, fast</code>.
                 </div>
                 <strong>Supported Platforms</strong>
@@ -653,7 +675,7 @@
                 <br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
-                    <p><code>ERROR (string)</code> </p>
+                    <p><code>ERROR (string)</code> </p><br>
                     Valid values are <code>ERROR, WARN, INFO, DEBUG, and VERBOSE</code>.
                 </div>
                 <strong>Supported Platforms</strong>
@@ -664,7 +686,7 @@
 
             <div id="setfullscreen" class="col col-md-10 hidediv">
                 <h4>SetFullscreen </h4>
-                Same as the Fullscreen parameter in the global configuration of this xml file. This Android-specific element is deprecated in favor of the global Fullscreen element, and will be removed in a future version.
+                Same as the <code>Fullscreen</code> parameter in the global configuration of this xml file. This Android-specific element is deprecated in favor of the global <code>Fullscreen</code> element, and will be removed in a future version.
                 <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
@@ -683,7 +705,7 @@
                 <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
-                    <p><code>singleTop (string)</code> </p>
+                    <p><code>singleTop (string)</code> </p><br>
                     Valid values are <code>standard, singleTop, singleTask, singleInstance</code>.
                 </div>
                 <strong>Supported Platforms</strong>
@@ -691,6 +713,59 @@
                     Android
                 </div>
             </div>
+
+            <div id="childbrowser" class="col col-md-10 hidediv">
+                <h4>ChildBrowser </h4>
+                Disables child browser windows. By default, apps launch a secondary browser window to display resources accessed via <code>window.open()</code> or by specifying a <code>_blank</code> anchor target.
+                <br>
+                Specify <code>disable</code> to override this default behavior.
+                <br><br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>enable (string)</code> </p><br>
+                    Valid values are <code>enable, disable</code>.
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    BlackBerry
+                </div>
+            </div>
+
+            <div id="popupblocker" class="col col-md-10 hidediv">
+                <h4>PopupBlocker </h4>
+                Enables the popup blocker, which prevents calls to <code>window.open()</code>. By default, popups display in a child browser window.
+                Setting the preference to <code>enable</code> prevents it from displaying at all.
+                <br>
+                Specify <code>enable</code> to override this default behavior.
+                <br><br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>disable (string)</code> </p><br>
+                    Valid values are <code>enable, disable</code>.
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    BlackBerry
+                </div>
+            </div>
+
+            <div id="websecurity" class="col col-md-10 hidediv">
+                <h4>WebSecurity </h4>
+                Set to <code>disable</code> to override web security settings, allowing access to remote content from unknown sources. This preference is intended as
+                a development convenience only, so remove it before packaging the app for distribution. For the released app, all URIs should
+                be known and whitelisted using the <code>&lt;access&gt;</code> element, described in the <a href="http://docs.phonegap.com/en/4.0.0/guide_appdev_whitelist_index.md.html#Whitelist%20Guide">Domain Whitelist Guide</a>.
+                <br><br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>enable (string)</code> </p><br>
+                    Valid values are <code>enable, disable</code>.
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    BlackBerry
+                </div>
+            </div>
+
             <!-- PREFERENCES END -->
 
             <div id="icon" class="col col-md-12 hidediv scroll">
@@ -701,13 +776,13 @@
                 <strong>Attributes</strong>
 
                 <div class="callout-info callout">
-                    <p><i>src</i> (required) specifies the location of the image file, relative to your project directory.</p>
+                    <p><i>src</i> <span class="required">(required)</span> specifies the location of the image file, relative to your project directory.</p>
                     <p><i>platform</i> (optional) target platform </p>
                     <p><i>width</i> (optional) icon width in pixels </p>
                     <p><i>height</i> (optional) icon height in pixels </p>
                     <p><i>density</i> (optional) android specific, specifies icon density </p>
-                </div>
 
+                </div>
 
                 <!--<div class="callout callout-platform">-->
                     <!--The following configuration can be used to define single default icon which will be used for all platforms.-->
@@ -789,8 +864,8 @@
 
 
                     <br>
-                    <button id="bbIconsBtn" type="button" class="btn btn-primary btn-xs" data-toggle="collapse" title="Blackberry icons"
-                            data-target="#bbIcons">Blackberry10 Icons</button><br>
+                    <button id="bbIconsBtn" type="button" class="btn btn-primary btn-xs" data-toggle="collapse" title="BlackBerry icons"
+                            data-target="#bbIcons">BlackBerry10 Icons</button><br>
 
                     <div id="bbIcons" class="collapse out">
                         <code>&lt;platform name="blackberry10"&gt;<br>
@@ -849,12 +924,13 @@
 
                 <strong>Attributes</strong>
                 <div class="callout-info callout">
-                    <p><i>src</i> <mark>(required)</mark> specifies the location of the image file, relative to your project directory.</p>
-                    <p><i>platform</i> <mark>(optional)</mark> target platform </p>
-                    <p><i>width</i> <mark>(required for ios, wp8 and windows8)</mark> image width in pixels </p>
-                    <p><i>height</i> <mark>(required for ios, wp8 and windows8)</mark> image height in pixels </p>
-                    <p><i>density</i> <mark>(required for android)</mark> android specific, specifies image density </p>
+                    <p><i>src</i> <span class="required">(required)</span> specifies the location of the image file, relative to your project directory.</p>
+                    <p><i>platform</i> (optional) target platform </p>
+                    <p><i>width</i> <span class="required">(required for ios, wp8 and windows8)</span>  image width in pixels </p>
+                    <p><i>height</i> <span class="required">(required for ios, wp8 and windows8)</span> image height in pixels </p>
+                    <p><i>density</i> <span class="required">(required for android)</span> specifies image density </p>
                 </div>
+
 
                 <div class="callout callout-platform">
                     To define pixel perfect images for each platform, surround your <code>&lt;splash&gt;</code> elements with the
@@ -883,8 +959,8 @@
                     </div>
 
                     <br>
-                    <button id="bbSplashBtn" type="button" class="btn btn-info btn-xs" data-toggle="collapse" title="Blackberry Splash"
-                            data-target="#bbSplash">Blackberry10 Splash Images</button><br>
+                    <button id="bbSplashBtn" type="button" class="btn btn-info btn-xs" data-toggle="collapse" title="BlackBerry Splash"
+                            data-target="#bbSplash">BlackBerry10 Splash Images</button><br>
 
 
                     <div id="bbSplash" class="collapse out">
@@ -1026,16 +1102,6 @@
             )
     </script>
     <script>
-        $('#prefs').on('show.bs.collapse', function () {
-            $("#collapseBtn").text("+");
-            $("#collapseBtn").addClass("btn-danger");
-            $("#collapseBtn").removeClass("btn-success");
-        })
-        $('#prefs').on('hide.bs.collapse', function () {
-            $("#collapseBtn").text("-");
-            $("#collapseBtn").addClass("btn-success");
-            $("#collapseBtn").removeClass("btn-danger");
-        })
         $('#iosPrefs').on('show.bs.collapse', function () {
             $("#iosBtn").text("Hide iOS Preferences");
             $("#iosBtn").addClass("btn-danger");
@@ -1055,6 +1121,16 @@
             $("#androidBtn").text("Show Android Preferences");
             $("#androidBtn").addClass("btn-success");
             $("#androidBtn").removeClass("btn-danger");
+        })
+        $('#bbPrefs').on('show.bs.collapse', function () {
+            $("#bbBtn").text("Hide BlackBerry Preferences");
+            $("#bbBtn").addClass("btn-danger");
+            $("#bbBtn").removeClass("btn-success");
+        })
+        $('#bbPrefs').on('hide.bs.collapse', function () {
+            $("#bbBtn").text("Show BlackBerry Preferences");
+            $("#bbBtn").addClass("btn-success");
+            $("#bbBtn").removeClass("btn-danger");
         })
     </script>
 </body>
