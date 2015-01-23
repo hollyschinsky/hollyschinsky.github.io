@@ -1,9 +1,6 @@
 body {
     margin: 5px;
 }
-/*#editor {*/
-    /*padding-left: 8px;*/
-/*}*/
 .cont {
     background: #fff;
     border: 2px solid #ddd;
@@ -54,7 +51,7 @@ a[href] p {
     border-bottom: 2px solid #e2e2e2;
 }
 #desc {
-    left: 48%;
+    left: 49%;
     height: 100%;
     width: 54%;
     position: fixed;
