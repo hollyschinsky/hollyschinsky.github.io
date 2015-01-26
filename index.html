@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PhoneGap Developer Resources</title>
+    <title>PhoneGap Developer Resources by <a href="http://devgirl.org">Devgirl</a></title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 
@@ -21,7 +21,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                    <a class="navbar-brand" href="http://devgirl.org">PhoneGap Developer Resources</a>
+                <a class="navbar-brand" href="http://devgirl.org">PhoneGap Developer Resources by Devgirl</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <form class="navbar-form navbar-right" role="form">
@@ -49,51 +49,54 @@
         <div class="container">
             <br>
             <img src="pg-logo.png" width="100" height="100" style="float: left">
+            <!--<img src="phonegap_wings.png" width="200" height="200" style="float: left">-->
             <div style="float: right">
-                <h1>PhoneGap Developer Resources</h1>
+                <h3>PhoneGap Developer Resources</h3>
                 <p>Mobile development resources and tutorials for developing mobile hybrid applications with PhoneGap/Cordova.</p>
             </div>
             <br>
         </div>
 
-        <p><a class="btn btn-primary btn-lg" href="about.html" role="button" style="float:right">Learn more &raquo;</a></p>
+        <!--<p><a class="btn btn-primary btn-lg" href="about.html" role="button" style="float:right">Learn more &raquo;</a></p>-->
         <br>
     </div>
 
     <div class="container">
-        <!-- Example row of columns -->
+
         <div class="row">
-            <div class="col-md-2">
-                <h2>Config Helper</h2>
+            <div class="col-md-5">
+                <h3>General Tutorials</h3>
+                    <p>Learn how to build a basic PhoneGap app without being tied to a specific mobile framework</p>
+                    <p><a class="btn btn-default" href="http://hollyschinsky.github.io/phonegap-workshop/" role="button">Basic PhoneGap Workshop &raquo;</a></p>
+                    <p>Build an advanced mobile application fast using Ionic/AngularJS</p>
+                    <p><a class="btn btn-default" href="http://hollyschinsky.github.io/ConferenceTracker/" role="button">Advanced PhoneGap Workshop &raquo;</a></p>
+            </div>
+            <div class="col-md-5">
+                <h3>Push Notifications</h3>
+                <p>Sample Ionic app and server side example of one way to support push notifications in your own apps  </p>
+                <p><a class="btn btn-default" href="http://devgirl.org/2014/12/16/push-notifications-sample-app-with-ionic-and-ngcordova/" role="button">Push Sample with Ionic &raquo;</a></li></p>
+                <p>Extensive tutorial on push notifications in general including links to previous tutorials and additional samples</p>
+                <p><a class="btn btn-default" href="http://devgirl.org/2013/07/17/tutorial-implement-push-notifications-in-your-phonegap-application/" role="button">Push Notifications Tutorial &raquo;</a></p>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <h3>Android Plugin Tutorial</h3>
+                <p>Learn how to build a custom plugin for your Android mobile device to access native features </p>
+                <p><a class="btn btn-default" href="http://devgirl.org/2013/09/17/how-to-write-a-phonegap-3-0-plugin-for-android/" role="button">Get Started &raquo;</a></p>
+            </div>
+            <div class="col-md-5">
+                <h3>Config.xml Helper</h3>
                 <p>Check out this interactive reference guide to help you build out your own config.xml file with details on all of the possible options, icons, splash screens help and more..</p>
                 <p><a class="btn btn-default" href="config-app/index.html" role="button">Config.xml Helper &raquo;</a></p>
-            </div>
-            <div class="col-md-2">
-                <h2>Basic Tutorial</h2>
-                <p>Test Drive: Build a hybrid mobile application using HTML/CSS and JavaScript. Learn about different challenges, performance techniques and other basic tips to be aware of when starting mobile dev't.</p>
-                <p><a class="btn btn-default" href="http://hollyschinsky.github.io/phonegap-workshop/" role="button">Get Started &raquo;</a></p>
-            </div>
-            <div class="col-md-2">
-                <h2>Advanced Tutorial</h2>
-                <p>Continue the Fast Track and build an advanced mobile application fast using Ionic/AngularJS. Learn how to implement native social sharing, native calendar access, push notifications, oauth and more.</p>
-                <p><a class="btn btn-default" href="http://hollyschinsky.github.io/ConferenceTracker/" role="button">Get Started &raquo;</a></p>
-            </div>
-            <div class="col-md-2">
-                <h2>Push Notifications Tutorial</h2>
-                <p>Everything you need to know to implement push notifications in your mobile application. </p>
-                <p><a class="btn btn-default" href="http://devgirl.org/2013/07/17/tutorial-implement-push-notifications-in-your-phonegap-application/" role="button">Get Started &raquo;</a></p>
-            </div>
-            <div class="col-md-3">
-                <h2>Android Plugin Tutorial</h2>
-                <p>Learn how to build a custom plugin to access native features for your android mobile device. </p>
-                <p><a class="btn btn-default" href="http://devgirl.org/2013/09/17/how-to-write-a-phonegap-3-0-plugin-for-android/" role="button">Get Started &raquo;</a></p>
             </div>
         </div>
 
         <hr>
 
         <footer>
-            <a href="http://twitter.com/hollyschinsky"> <p>&copy; Holly Schinsky 2015</p></a>
+            <a href="http://devgirl.org"> <p>&copy; Holly Schinsky 2015</p></a>
             <a href="https://twitter.com/devgirlfl" class="twitter-follow-button" data-show-count="true"
                data-size="large" data-lang="en">Follow
                 @devgirlfl</a>
@@ -103,12 +106,8 @@
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
 <script src="lib/jquery_1.5.2.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<!-- Latest compiled and minified JavaScript -->
-<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>-->
 
 </body>
 </html>
