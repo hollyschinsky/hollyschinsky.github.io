@@ -13,6 +13,7 @@
 
     <div>
     <h3 class="title">Configuring PhoneGap</h3>
+
     <div class="col col-md-6">
 
     <div class="alert alert-info min">Hover over any element below for specific configuration details. These elements <mark>apply when using the PhoneGap or Cordova CLI</mark>,
@@ -203,30 +204,30 @@
                 <!--StatusBar plugin </a>etc. Please visit the plugin documentation for those details. </p>-->
             <!--<div style="height: 100px"></div>-->
 
-    s</div>
+    </div>
 
 
     <div id="desc">
             <div id="widget" class="col col-md-10 hidediv">
-                <h4>Widget</h4>The root element of the config.xml with some identifying attributes:<br>
+                <h4>Widget</h4> <span class="required">(required)</span> The root element of the config.xml with some identifying attributes:<br>
                 <div class="callout-info callout">
                     <p><i>id</i> <span class="required">(required)</span> Reverse-domain identifier for the app</p>
-                    <p><i>version</i> <span class="required">(required)</span>  Full version number expressed in major/minor/patch notation</p>
+                    <p><i>version</i><span class="required">(required)</span>  Full version number expressed in major/minor/patch notation</p>
                     <p><i>versionCode</i> (Android only) Internal version number (more details <a href="http://developer.android.com/tools/publishing/versioning.html">here</a>).</p>
                     <p><i>cfBundleVersion</i> (iOS only) Internal version number</p>
                 </div>
             </div>
 
             <div id="name" class="col col-md-10 hidediv">
-                <h4>Name</h4>Specifies a formal name for the app as it should appear on the device's home screen and within app store's.
+                <h4>Name</h4><span class="required">(required)</span> Specifies a formal name for the app as it should appear on the device's home screen and within app store's.
             </div>
 
             <div id="description" class="col col-md-10 hidediv">
-                <h4>Description</h4>A description of what the application is about or what function it performs.
+                <h4>Description</h4>(optional) A description of what the application is about or what function it performs.
             </div>
 
             <div id="author" class="col col-md-10 hidediv">
-                <h4>Author</h4>The author of the application. May appear in the app store listings.
+                <h4>Author</h4>(optional) The author of the application.
                 <div class="callout-info callout">
                     <p><i>email</i> An email address for the author.</p>
                     <p><i>href</i> a URL associated with the author (product page, blog etc).</p>
@@ -234,7 +235,7 @@
             </div>
 
             <div id="content" class="col col-md-10 hidediv">
-                <h4>Content</h4>Optional element that defines the application's starting page in the top-level web assets directory (<i>www</i> folder).
+                <h4>Content</h4>(optional) Defines the application's starting page in the top-level web assets directory (<i>www</i> folder).
                 <div class="callout-info callout">
                     <p><i>src</i> The file name/location of the starting page. Defaults to index.html.</p>
                 </div>
@@ -1048,12 +1049,13 @@
             </div>
 
             <div id="access" class="col col-md-10 hidediv">
-                <h4>Access</h4>define the set of external domains the app is allowed to communicate with. The default value shown above allows it to access any server.
-                <br>
+                <h4>Access</h4> (optional) Defines the set of external domains the app is allowed to communicate with. The "*" value for origin will allow  the app to access any server.
+                <br><br>
                 See the <a href="http://docs.phonegap.com/en/edge/guide_appdev_whitelist_index.md.html#Whitelist%20Guide">Domain Whitelist Guide for details.</a>
                 <div class="callout-info callout">
-                    <p><i>origin</i> The file name/location of the starting page. Defaults to index.html.</p>
+                    <p><i>origin</i> The domains to allow. Set to "*" for all.</p>
                 </div>
+                <div class="alert alert-danger">Currently required for iOS (fix in the works), otherwise defaults to all or ("*") if left out. </div>
             </div>
 
             <div id="feature" class="col col-md-10 hidediv">
