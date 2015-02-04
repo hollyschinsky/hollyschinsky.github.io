@@ -58,18 +58,20 @@
                     </a>
                 </p>
                 <br>
+
                 <p>
-                    <a href="#content">
+                    <a href="#content1">
                         &lt;content src="index.html"/&gt;
                     </a>
                 </p>
                 <br>
                 <p>
-                    <a href="#access">
-                        &lt;access origin="*"&gt;
+                    <a href="#accessOrigin">
+                        &lt;access origin="*"/&gt;
                     </a>
                 </p>
                 <br>
+
                 <p>
                     <a href="#platform">
                         &lt;platform name="android"&gt;<br>
@@ -234,7 +236,7 @@
                 </div>
             </div>
 
-            <div id="content" class="col col-md-10 hidediv">
+            <div id="content1" class="col col-md-10 hidediv">
                 <h4>Content</h4>(optional) Defines the application's starting page in the top-level web assets directory (<i>www</i> folder).
                 <div class="callout-info callout">
                     <p><i>src</i> The file name/location of the starting page. Defaults to index.html.</p>
@@ -312,7 +314,9 @@
                 <div class="callout-platform callout">
                     All platforms except iOS (see <a class="lnk" href="https://issues.apache.org/jira/browse/CB-6182"> here</a>)<br>
                 </div>
-<br>
+
+                <br>
+
                 <h4>Android</h4>
                 <div class="row">
 
@@ -323,8 +327,7 @@
                         <img src="res/fullscreen-android-true.png"/>
                     </div>
                 </div>
-
-                <br>
+<br>
 
                 <div class="callout-platform callout">For iOS you can modify the application <i>&lt;myProject&gt;.plist</i> source file found in the <strong>/platforms/ios</strong> folder of the project
                  with:
@@ -348,9 +351,8 @@
                         <img src="res/ios-hidden-statusbar.png"/>
                     </div>
                 </div>
-                <br>
                 <div class="alert alert-info">You could also programmatically hide it using the <a class="lnk" href="https://github.com/apache/cordova-plugin-statusbar/blob/master/doc/index.md">StatusBarPlugin</a>, see the link for more details.
-                Also check out this interactive <a href="http://devgirl.org/2014/07/31/phonegap-developers-guid/">iOS StatusBar guide</a> for more details.</div>
+                    Also check out this interactive <a href="http://devgirl.org/2014/07/31/phonegap-developers-guid/">iOS StatusBar guide</a> for more details.</div>
                 <div style="height: 100px"></div>
             </div>
 
@@ -361,12 +363,46 @@
 
                 <br><strong>Default</strong>
                 <div class="callout-info callout">
-                    <p><code>default, landscape, or portrait</code> where setting the value of <code>default</code> will assume both portrait and landscape</p><br>
+                    <p><code>default, landscape, or portrait</code> where setting the value of <code>default</code> will assume both <code>portrait</code>
+                        and <code>landscape</code> rotating as needed.</p><br>
                     <p class="alert-warning alert">Leave this setting out if you want to support the default platform-level value (typically portrait only).</p>
                 </div>
+
+                <h4>Example (Android)</h4>
+                <div class="row indent">
+                    <div class="col-md-6">
+                        <strong>Orientation set to <code>portrait</code></strong>
+                        <video width="280" height="480" autoplay controls>
+                            <source src="res/android-portrait.mp4" type="video/mp4">
+
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="col-md-6">
+                        <strong>Orientation set to <code>landscape</code></strong>
+                        <video width="280" height="480" autoplay controls>
+                            <source src="res/android-landscape.mp4" type="video/mp4">
+
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <div class="col-md-6">
+                        <br>
+                        <strong>Orientation set to <code>default</code></strong>
+
+                        <video width="280" height="480" autoplay controls>
+                            <source src="res/device-default.mp4" type="video/mp4">
+
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <br><br>
                 <strong>Supported Platforms</strong>
                 <div class="callout-platform callout">
-                    All except iOS. For iOS you must modify the application <i>&lt;myProject&gt;.plist</i> file found in the Resources folder of the iOS project. You can add it manually to the plist source with:
+                    All except iOS. For iOS you must modify the application <i>&lt;myProject&gt;.plist</i> file found in the <strong>../platforms/iOS</strong> folder of your project.
+                    Add it manually to the plist source with your desired values like shown below:
                     <br><br>
                     <code>
                         &lt;key&gt;UISupportedInterfaceOrientations&lt;/key&gt;<br>
@@ -377,12 +413,13 @@
                         <span class="indent">&lt;string&gt;UIInterfaceOrientationLandscapeRight&lt;/string&gt;</span><br>
                         &lt;/array&gt;
                     </code><br><br>
-                    Or if you open the <i>&lt;myProject&gt;.plist</i> file in XCode, simply add the keys and values by clicking the + sign and adding those desired.
+                    Or if you open the <i>&lt;myProject&gt;.plist</i> file in XCode (look under <strong>Resources/</strong>), simply add the keys and values by clicking the + sign and adding those desired.
                 </div>
+
                 <div style="height: 100px"></div>
             </div>
 
-            <div id="backgroundcolor" class="col col-md-10 hidediv">
+            <div id="backgroundcolor" class="col col-md-10 hidediv scroll">
                 <h4>BackgroundColor</h4>
                 Sets the application's background color. This preference supports a four-byte hex value, with the first byte representing the alpha channel, and standard RGB values for the following three bytes.
 
@@ -391,12 +428,20 @@
 
                 <strong>Supported Platforms</strong>
                 <div class="callout-platform callout">
-                    Android
+                    Android, Blackberry
+                    <br><br>
+                    <mark>* Overrides CSS otherwise available across other platforms.</mark>
                 </div>
+                <h4>Example (Android) - Displays Background Color set at Startup</h4>
+                <video width="280" height="480" loop autoplay controls class="indent">
+                    <source src="res/android-bg-blue.mp4" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
                 <div class="alert alert-info">For other platforms you can override the CSS by using something like:<br> <code>body { background-color:blue }</code></div>
             </div>
 
-            <div id="hidekeyboard" class="col col-md-10 hidediv">
+            <div id="hidekeyboard" class="col col-md-10 hidediv scroll">
                 <h4>HideKeyboardFormAccessoryBar</h4>
                 Set to <code>true</code> to hide the additional toolbar that appears above the keyboard, helping users navigate from one form input to another.
                 <br>
@@ -409,8 +454,23 @@
                 <div class="callout-platform callout">
                     BlackBerry, iOS<br><br>
 
-                    <mark>* Requires the <a class="lnk" href="https://github.com/apache/cordova-plugins/tree/master/keyboard">Keyboard plugin</a> for iOS.</mark>
+                    <mark>* Requires the <a class="lnk" href="https://github.com/apache/cordova-plugins/tree/master/keyboard">Keyboard plugin</a> for iOS.
+                    If you have trouble with it on iOS8, check out <a href="https://github.com/driftyco/ionic-plugins-keyboard">this one.</a></mark>
                 </div>
+                <h4>iOS</h4>
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <strong>Before</strong>
+                        <img src="res/IMG_1915a.png"/>
+                    </div>
+                    <div class="col-md-6">
+                        <strong>After</strong>
+                        <img src="res/IMG_1916.PNG"/>
+                    </div>
+                </div>
+                <br>
+                <div style="height: 100px"></div>
             </div>
 
             <!-- iOS Preferences -->
@@ -465,9 +525,48 @@
                 <div style="height: 100px"></div>
             </div>
 
+            <div id="keyboardrequires" class="col col-md-10 hidediv scroll">
+                <h4>KeyboardDisplayRequiresUserAction</h4>
+                The default value of <code>true</code> means the user must explicitly tap input elements to display the keyboard. If set to
+                <code>false</code>, the field can programmatically receive focus and show the keyboard just by a call to <code>focus()</code>.
+                <br><br>
+                <strong>Default</strong>
+                <div class="callout-info callout">
+                    <p><code>true (boolean)</code> </p>
+                </div>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    iOS
+                </div>
+
+                <div>
+                    Assuming the following code that programmatically set focus to a text field on startup:
+                    <br>
+                    <code>
+                        &lt;input id="txt" type="text"/&gt;<br>
+                        var txtFd = document.getElementById('txt').focus();
+                    </code>
+                    <br><br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong>When value is <code>false</code></strong>
+                            <img src="res/key-false.png"><br>
+                            <mark>* The keyboard is triggered with the programmatic call to <code>focus()</code> automatically</mark>
+                        </div>
+
+                        <div class="col-md-6">
+                            <strong>When value is <code>true</code></strong>
+                            <img src="res/key-true.png"><br>
+                            <mark>* No keyboard is triggered from a call to <code>focus()</code>, you must tap into the text field to trigger it.</mark>
+                        </div>
+                    </div>
+                </div>
+                <div style="height: 100px"></div>
+            </div>
+
             <div id="mediaplaybackrequires" class="col col-md-10 hidediv">
                 <h4>MediaPlaybackRequiresUserAction</h4>
-                Set to true to prevent HTML5 videos or audios from playing automatically with the <code>autoplay</code> attribute or via JavaScript.
+                Set to <code>true</code> to prevent HTML5 videos or audios from playing automatically with the <code>autoplay</code> attribute or via JavaScript.
                 <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
@@ -481,7 +580,7 @@
 
             <div id="allowinlinemediaplayback" class="col col-md-10 hidediv">
                 <h4>AllowInlineMediaPlayback</h4>
-                Set to true to allow HTML5 media playback to appear inline within the screen layout, using browser-supplied controls rather than native controls. For this to work, add the
+                Set to <code>true</code> to allow HTML5 media playback to appear inline within the screen layout, using browser-supplied controls rather than native controls. For this to work, add the
                 <code>webkit-playsinline</code> attribute to any <code>&lt;video&gt;</code> elements.
                 <br><br>
                 <strong>Default</strong>
@@ -525,41 +624,7 @@
                 </div>
             </div>
 
-            <div id="keyboardrequires" class="col col-md-10 hidediv scroll">
-                <h4>KeyboardDisplayRequiresUserAction</h4>
-                The default value of <code>true</code> means the user must explicitly tap input elements to display the keyboard. If set to
-                <code>false</code>, the field can programmatically receive focus and show the keyboard just by a call to <code>focus()</code>.
-                <br><br>
-                <strong>Default</strong>
-                <div class="callout-info callout">
-                    <p><code>true (boolean)</code> </p>
-                </div>
-                <strong>Supported Platforms</strong>
-                <div class="callout-platform callout">
-                    iOS
-                </div>
 
-                <div>Assuming the following code to programmatically set focus to a text field on startup:
-                <br>
-                    <code>
-                    &lt;input id="txt" type="text"/&gt;<br>
-                    var txtFd = document.getElementById('txt').focus();
-                    </code>
-                <br><br>
-
-                    <div>With: <strong>&lt;preference name="KeyboardDisplayRequiresUserAction" value="false" /&gt;</strong>
-                        <img src="res/key-false.png"><br>
-                        <mark>* The keyboard is triggered with the programmatic call to <code>focus()</code> automatically</mark>
-                    </div>
-                <br>
-                    <div>With: <strong>&lt;preference name="KeyboardDisplayRequiresUserAction" value="true" /&gt;</strong>
-                        <img src="res/key-true.png"><br>
-                        <mark>* No keyboard is triggered from a call to <code>focus()</code>, you must tap into the text field to trigger it.</mark>
-                    </div>
-                </div>
-                <div style="height: 100px"></div>
-
-            </div>
 
             <div id="suppressesincremrender" class="col col-md-10 hidediv">
                 <h4>SuppressesIncrementalRendering</h4>
@@ -922,7 +987,7 @@
 
                     To define pixel perfect icons for each platform, surround your <code>&lt;icon&gt;</code> elements with the
                     <code>&lt;platform&gt;</code> element set to the platform name. Toggle the buttons below to see how to set the
-                    platform name and the specific attributes supproted for each of the platforms.
+                    platform name and the specific attributes supported for each of the platforms.
                     <br><br>
 
                     <br>
@@ -1160,12 +1225,12 @@
                 </div>
             </div>
 
-            <div id="access" class="col col-md-10 hidediv">
+            <div id="access2" class="col col-md-10 hidediv">
                 <h4>Access</h4> (optional) Defines the set of external domains the app is allowed to communicate with. The "*" value for origin will allow  the app to access any server.
                 <br><br>
                 See the <a class="lnk" href="http://docs.phonegap.com/en/edge/guide_appdev_whitelist_index.md.html#Whitelist%20Guide">Domain Whitelist Guide for details.</a>
                 <div class="callout-info callout">
-                    <p><i>origin</i> The domains to allow. Set to "*" for all.</p>
+                    <p><i>origin</i> The domains to allow. Set to <code>"*"</code> for all.</p>
                 </div>
                 <div class="alert alert-danger">Currently required for iOS (fix in the works), otherwise defaults to all or ("*") if left out. </div>
             </div>
@@ -1186,6 +1251,16 @@
 
                 <div class="alert alert-danger">Not typically used with the CLI. </div>
 
+            </div>
+
+            <div id="accessOrigin" class="col col-md-10 hidediv">
+                <h4>Access</h4> (optional) Defines the set of external domains the app is allowed to communicate with. The "*" value for origin will allow  the app to access any server.
+                <br><br>
+                See the <a class="lnk" href="http://docs.phonegap.com/en/edge/guide_appdev_whitelist_index.md.html#Whitelist%20Guide">Domain Whitelist Guide for details.</a>
+                <div class="callout-info callout">
+                    <p><i>origin</i> The domains to allow. Set to <code>"*"</code> for all.</p>
+                </div>
+                <div class="alert alert-danger">Currently required for iOS (fix in the works), otherwise defaults to all or ("*") if left out. </div>
             </div>
 
             <div id="platform" class="col col-md-10 hidediv">
