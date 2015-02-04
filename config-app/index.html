@@ -17,8 +17,8 @@
     <div class="col col-md-6">
 
     <div class="alert alert-info min">Hover over any element below for specific configuration details. These elements <mark>apply when using the PhoneGap or Cordova CLI</mark>,
-    if you're using <a class="lnk" href="http://build.phonegap.com">PhoneGap Build</a>, please see the <a class="lnk" href="http://docs.build.phonegap.com/en_US/configuring_config_file_element.md.html#Config%20File%20Elements">official PhoneGap Build Guide</a> or this
-    useful and free <a class="lnk" href="http://aj-software.com/configap/">ConfiGAP tool</a> for building your config.xml file for use with PhoneGap Build. </div>
+    if you're using <a class="lnk" href="http://build.phonegap.com" target="_blank">PhoneGap Build</a>, please see the <a class="lnk" href="http://docs.build.phonegap.com/en_US/configuring_config_file_element.md.html#Config%20File%20Elements" target="_blank">official PhoneGap Build Guide</a> or this
+    useful and free <a class="lnk" href="http://aj-software.com/configap/" target="_blank">ConfiGAP tool</a> for building your config.xml file for use with PhoneGap Build. </div>
         <!-- Border container for config source -->
             <!--<h4>config.xml</h4>-->
             <!--<div class="cont">-->
@@ -272,13 +272,17 @@
             <div id="overscroll" class="col col-md-10 hidediv scroll">
                 <h4>DisallowOverscroll</h4>
                 Set to <code>true</code> if you don't want the interface to display any feedback when users scroll past the beginning or end of content.
-                <!--<div class="alert alert-warning">-->
-                   <br><mark>You'll likely want to include this preference in your config.xml to override the default and set to <code>true</code> to eliminate overscroll effects. This default was necessary for back-compatibility.</mark>
-                <!--</div>--><br><br>
+                <br>
 
+
+                <br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>false (boolean)</code></p>
+                    <br>
+                    <div class="alert alert-warning">
+                        You'll most likely want to include this preference in your config.xml to override this default and set to <code>true</code> to eliminate overscroll effects. This default was necessary for back-compatibility.
+                    </div>
                 </div>
 
                 <div class="alert alert-success">
@@ -303,7 +307,7 @@
                     </video>
                 </div>
             <br>
-                Below are some example images showing the effect when set to <code>false</code> on certain Android versions where this occurs:
+                Below are some example images showing the overscroll effect when set to <code>false</code> on certain Android versions where this occurs:
                 <br><br>
                 <div class="row indent" style="margin-left: 15px">
                     <img src="res/dis-android-false.jpg"/>
@@ -327,7 +331,7 @@
                 </div>
                 <strong>Supported Platforms</strong>
                 <div class="callout-platform callout">
-                    All platforms except iOS (see <a class="lnk" href="https://issues.apache.org/jira/browse/CB-6182"> here</a>)<br>
+                    All platforms except iOS (see <a class="lnk" href="https://issues.apache.org/jira/browse/CB-6182" target="_blank"> here</a>)<br>
                 </div>
 
                 <br>
@@ -470,18 +474,18 @@
                 <div class="callout-platform callout">
                     BlackBerry, iOS<br><br>
 
-                    <mark>* Requires the <a class="lnk" href="https://github.com/apache/cordova-plugins/tree/master/keyboard">Keyboard plugin</a> for iOS.
+                    <mark>* Requires the <a class="lnk" href="https://github.com/apache/cordova-plugins/tree/master/keyboard" target="_blank">Keyboard plugin</a> for iOS.
                     If you have trouble with it on iOS8, check out <a href="https://github.com/driftyco/ionic-plugins-keyboard">this one.</a></mark>
                 </div>
                 <h4>iOS</h4>
                 <div class="row">
 
                     <div class="col-md-6">
-                        <strong>Before</strong>
-                        <img src="res/IMG_1915a.png"/>
+                        <strong>With Accessory Bar</strong>
+                        <img src="res/IMG_1915.png"/>
                     </div>
                     <div class="col-md-6">
-                        <strong>After</strong>
+                        <strong>Hidden Accessory Bar</strong>
                         <img src="res/IMG_1916.PNG"/>
                     </div>
                 </div>
@@ -507,10 +511,10 @@
                 Set to <code>true</code> to allow the <strong>viewport</strong> meta tag to either disable or restrict the range of user scaling, which is enabled by default.
                 <br><br>
                 Place a <strong>viewport</strong> meta tag in your <i>index.html</i> to disable scaling and fit content flexibly within the rendering webview, such as:<br>
-                <code>&lt;meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'/&gt;</code>
-                <br><br>
-                <p>Below shows an example of setting this property to <code>true</code> on iOS with a meta-tag of:<br>
-                    <code>&lt;meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1'/&gt;</code>
+                <p><code class="indent">&lt;meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'/&gt;</code></p>
+                <br>
+                <p>The sample video below shows how scaling could be affected with this property set to <code>true</code> with a viewport set to:<br>
+                <p> <code class="indent">&lt;meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1'/&gt;</code></p>
                 </p><br>
                 <video width="280" height="480" loop autoplay controls class="indent">
                     <source src="res/viewport-scale-enabled.m4v" type="video/mp4">
@@ -520,9 +524,9 @@
                 <br>
                 <p>See these links below for details on configuring your viewport:</p>
                 <ul>
-                    <li><a class='lnk' href="https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html#//apple_ref/doc/uid/TP40008193-SW3">Apple Viewport Guidelines</a></li>
-                    <li><a class='lnk' href="https://developers.google.com/speed/docs/insights/ConfigureViewport">Google Viewport Guidelines</a></li>
-                    <li><a class='lnk' href="https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag">Mozilla Viewport Guidelines</a></li>
+                    <li><a class='lnk' href="https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html#//apple_ref/doc/uid/TP40008193-SW3" target="_blank">Apple Viewport Guidelines</a></li>
+                    <li><a class='lnk' href="https://developers.google.com/speed/docs/insights/ConfigureViewport" target="_blank">Google Viewport Guidelines</a></li>
+                    <li><a class='lnk' href="https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag" target="_blank">Mozilla Viewport Guidelines</a></li>
                 </ul>
 
 
@@ -960,7 +964,7 @@
                 <h4>WebSecurity </h4>
                 Set to <code>disable</code> to override web security settings, allowing access to remote content from unknown sources. This preference is intended as
                 a development convenience only, so remove it before packaging the app for distribution. For the released app, all URIs should
-                be known and whitelisted using the <code>&lt;access&gt;</code> element, described in the <a class="lnk" href="http://docs.phonegap.com/en/4.0.0/guide_appdev_whitelist_index.md.html#Whitelist%20Guide">Domain Whitelist Guide</a>.
+                be known and whitelisted using the <code>&lt;access&gt;</code> element, described in the <a class="lnk" href="http://docs.phonegap.com/en/4.0.0/guide_appdev_whitelist_index.md.html#Whitelist%20Guide" target="_blank">Domain Whitelist Guide</a>.
                 <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
@@ -1244,7 +1248,7 @@
             <div id="access2" class="col col-md-10 hidediv">
                 <h4>Access</h4> (optional) Defines the set of external domains the app is allowed to communicate with. The "*" value for origin will allow  the app to access any server.
                 <br><br>
-                See the <a class="lnk" href="http://docs.phonegap.com/en/edge/guide_appdev_whitelist_index.md.html#Whitelist%20Guide">Domain Whitelist Guide for details.</a>
+                See the <a class="lnk" href="http://docs.phonegap.com/en/edge/guide_appdev_whitelist_index.md.html#Whitelist%20Guide" target="_blank">Domain Whitelist Guide for details.</a>
                 <br>
                 <div class="callout-info callout">
                     <p><i>origin</i> The domains to allow. Set to <code>"*"</code> for all.</p>
@@ -1275,7 +1279,7 @@
             <div id="accessOrigin" class="col col-md-10 hidediv">
                 <h4>Access</h4> (optional) Defines the set of external domains the app is allowed to communicate with. The "*" value for origin will allow  the app to access any server.
                 <br><br>
-                See the <a class="lnk" href="http://docs.phonegap.com/en/edge/guide_appdev_whitelist_index.md.html#Whitelist%20Guide">Domain Whitelist Guide for details.</a>
+                See the <a class="lnk" href="http://docs.phonegap.com/en/edge/guide_appdev_whitelist_index.md.html#Whitelist%20Guide" target="_blank">Domain Whitelist Guide for details.</a>
                 <br><br>
                 <strong>Attributes</strong>
                 <br>
