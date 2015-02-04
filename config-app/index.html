@@ -34,8 +34,8 @@
                     <a href="#widget">
                         &lt;widget xmlns="http://www.w3.org/ns/widgets"
                                 <span class="indent">xmlns:gap="http://phonegap.com/ns/1.0"</span>
-                                id="com.phonegap.helloworld"
-                                <span class="indent">version="1.0.0"&gt;</span>
+                                <span class="indent">id="com.phonegap.helloworld"</span>
+                                <span>version="1.0.0"&gt;</span>
                     </a>
                 </p>
                 <br>
@@ -89,7 +89,7 @@
                     <a href="#feature">
                         &lt;feature name="Device"&gt;
                         <div class="tab">
-                            &lt;param name="android-package" value="org.apache.cordova.device.Device" /&gt;
+                            &lt;param name="android-package" <div class="tab">value="org.apache.cordova.device.Device"</div>/&gt;
                         </div>
                         &lt;/feature&gt;
                     </a>
@@ -118,7 +118,8 @@
                     &lt;!--iOS Preferences</code>--&gt;<br>
                     <a href="#enableviewportscale">&lt;preference name="EnableViewportScale" value="true"/&gt;</a>  <br><br>
                     <a href="#keyboardrequires">&lt;preference name="KeyboardDisplayRequiresUserAction" value="false"/&gt;</a><br><br>
-                    <a href="#topactivityindicator">&lt;preference name="TopActivityIndicator" value="white"/&gt;</a><br><br>
+                <!-- No longer used - in core -->
+                <!--<a href="#topactivityindicator">&lt;preference name="TopActivityIndicator" value="white"/&gt;</a><br><br>-->
 
                     <a href="#mediaplaybackrequires">&lt;preference name="MediaPlaybackRequiresUserAction" value="true"/&gt;</a><br><br>
                     <a href="#allowinlinemediaplayback">&lt;preference name="AllowInlineMediaPlayback" value="true"/&gt;</a><br><br>
@@ -629,20 +630,20 @@
                 </div>
             </div>
 
-            <div id="topactivityindicator" class="col col-md-10 hidediv">
-                <h4>TopActivityIndicator</h4>
-                 Controls the appearance of the small spinning icon in the status bar that indicates significant processor activity.
-                <br><br>
-                <strong>Default</strong>
-                <div class="callout-info callout">
-                    <p><code>gray (string)</code></p><br>
-                    Valid values are <code>whiteLarge, white and gray</code>
-                </div>
-                <strong>Supported Platforms</strong>
-                <div class="callout-platform callout">
-                    iOS
-                </div>
-            </div>
+            <!--<div id="topactivityindicator" class="col col-md-10 hidediv">-->
+                <!--<h4>TopActivityIndicator</h4>-->
+                 <!--Controls the appearance of the small spinning icon in the status bar that indicates significant processor activity.-->
+                <!--<br><br>-->
+                <!--<strong>Default</strong>-->
+                <!--<div class="callout-info callout">-->
+                    <!--<p><code>gray (string)</code></p><br>-->
+                    <!--Valid values are <code>whiteLarge, white and gray</code>-->
+                <!--</div>-->
+                <!--<strong>Supported Platforms</strong>-->
+                <!--<div class="callout-platform callout">-->
+                    <!--iOS-->
+                <!--</div>-->
+            <!--</div>-->
 
 
 
