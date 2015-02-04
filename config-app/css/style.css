@@ -60,6 +60,7 @@ a[href] p {
 #config {
     font-family: courier, monospace;
     color: #053999;
+    font-size: 16px;
 }
 .value {
     color: #0e992a;
