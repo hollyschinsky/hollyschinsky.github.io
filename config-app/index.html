@@ -130,7 +130,7 @@
                     <a href="#paginationmode">&lt;preference name="PaginationMode" value="unpaginated"/&gt;</a><br><br>
                     <a href="#uiwebviewdecleration">&lt;preference name="UIWebViewDecelerationSpeed" value="fast"/&gt;</a><br><br>
                 </p>
-                
+
                 <br>
 
                 <button id="androidBtn" type="button" class="btn btn-info btn-lg" data-toggle="collapse" title="Android preferences"
@@ -1269,8 +1269,9 @@
             <div id="platform" class="col col-md-10 hidediv">
                 <h4>Platform</h4>
                 Use this element to specify configuration that should only appear in a single platform-specific <b>config.xml</b> file. The platform
-                specific <b>config.xml</b> used at runtime (for the iOS platform it resides at: ~/MyMobileApp/platforms/ios/MyMobileApp/config.xml
-                and for the Android platform it resides at: ~/MyMobileApp/platforms/android/assets/www/index.html). This will get copied into
+                specific <b>config.xml</b> used at runtime (for the iOS platform it resides at:
+                <i>~/MyMobileApp/platforms/ios/MyMobileApp/config.xml</i>
+                and for the Android platform it resides at: <i>/MyMobileApp/platforms/android/assets/res/xml.config.xml)</i>. This will get copied into
                 the platform-specific folder if specified in the root config.xml.
                 For instance, if you wanted to specify a preference for android only, surround it by this element with the platform
                 <code>name</code> attribute set to <bold>android</bold>.
@@ -1286,7 +1287,7 @@
 
     </div>
 
-
+pwd
     <script src="lib/jquery-1.11.2.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 
