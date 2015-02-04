@@ -214,6 +214,9 @@
     <div id="desc">
             <div id="widget" class="col col-md-10 hidediv">
                 <h4>Widget</h4> <span class="required">(required)</span> The root element of the config.xml with some identifying attributes:<br>
+                <br>
+                <strong>Attributes</strong>
+                <br>
                 <div class="callout-info callout">
                     <p><i>id</i> <span class="required">(required)</span> Reverse-domain identifier for the app</p>
                     <p><i>version</i><span class="required">(required)</span>  Full version number expressed in major/minor/patch notation</p>
@@ -232,6 +235,9 @@
 
             <div id="author" class="col col-md-10 hidediv">
                 <h4>Author</h4>(optional) The author of the application.
+                <br><br>
+                <strong>Attributes</strong>
+
                 <div class="callout-info callout">
                     <p><i>email</i> An email address for the author.</p>
                     <p><i>href</i> a URL associated with the author (product page, blog etc).</p>
@@ -240,6 +246,9 @@
 
             <div id="content1" class="col col-md-10 hidediv">
                 <h4>Content</h4>(optional) Defines the application's starting page in the top-level web assets directory (<i>www</i> folder).
+                <br><br>
+                <strong>Attribute</strong>
+                <br>
                 <div class="callout-info callout">
                     <p><i>src</i> The file name/location of the starting page. Defaults to index.html.</p>
                 </div>
@@ -247,8 +256,12 @@
 
             <div id="preference" class="col col-md-10 hidediv">
                 <h4>Preference</h4> Sets different options for your application as pairs of name/value attributes.
+
                 <p class="alert-warning"> Preference name is <bold>case-insensitive</bold>.</p>
-                <br><br><strong class="label label-warning">IMPORTANT:</strong> Most preferences are unique to a platform or subset of platforms (iOS, Android, Win, PhoneGap Build etc).
+                <br><strong class="label label-warning">IMPORTANT:</strong> Most preferences are unique to a platform or subset of platforms (iOS, Android, Win, PhoneGap Build etc).
+                <br><br>
+                <strong>Attributes</strong>
+                <br>
                 <div class="callout-info callout">
                     <p><i>name</i> The name of the preference to set.</p>
                     <p><i>value</i> The value of the preference to set.</p>
@@ -966,7 +979,7 @@
                 <h4>Icon </h4>
                 When working in the CLI you can define app icon(s) via the <code>&lt;icon&gt;</code> element (config.xml).
                 If you do not specify an icon, a default image is used.
-                <br>
+                <br><br>
                 <strong>Attributes</strong>
 
                 <div class="callout-info callout">
@@ -1232,6 +1245,7 @@
                 <h4>Access</h4> (optional) Defines the set of external domains the app is allowed to communicate with. The "*" value for origin will allow  the app to access any server.
                 <br><br>
                 See the <a class="lnk" href="http://docs.phonegap.com/en/edge/guide_appdev_whitelist_index.md.html#Whitelist%20Guide">Domain Whitelist Guide for details.</a>
+                <br>
                 <div class="callout-info callout">
                     <p><i>origin</i> The domains to allow. Set to <code>"*"</code> for all.</p>
                 </div>
@@ -1241,7 +1255,9 @@
             <div id="feature" class="col col-md-10 hidediv">
                 <h4>Feature</h4> Used for the specific case of updating the platform-level config.xml to include a certain plugin or customization
                 specific to that platform.
-
+                <br><br>
+                <strong>Attributes</strong>
+                <br>
                 <div class="callout-info callout">
                     <p><i>name</i> The name of a specific feature, typically a plugin API to access.</p><br>
                     <strong>Child elements</strong>
@@ -1260,6 +1276,9 @@
                 <h4>Access</h4> (optional) Defines the set of external domains the app is allowed to communicate with. The "*" value for origin will allow  the app to access any server.
                 <br><br>
                 See the <a class="lnk" href="http://docs.phonegap.com/en/edge/guide_appdev_whitelist_index.md.html#Whitelist%20Guide">Domain Whitelist Guide for details.</a>
+                <br><br>
+                <strong>Attributes</strong>
+                <br>
                 <div class="callout-info callout">
                     <p><i>origin</i> The domains to allow. Set to <code>"*"</code> for all.</p>
                 </div>
@@ -1268,16 +1287,34 @@
 
             <div id="platform" class="col col-md-10 hidediv">
                 <h4>Platform</h4>
-                Use this element to specify configuration that should only appear in a single platform-specific <b>config.xml</b> file. The platform
-                specific <b>config.xml</b> used at runtime (for the iOS platform it resides at:
+                Use this element to specify configuration that should only appear in a single platform-specific <b>config.xml</b> file used by that platform
+                at runtime. The paths to these files for iOS and Android are:
+                <h5>iOS</h5>
                 <i>~/MyMobileApp/platforms/ios/MyMobileApp/config.xml</i>
-                and for the Android platform it resides at: <i>/MyMobileApp/platforms/android/assets/res/xml.config.xml)</i>. This will get copied into
-                the platform-specific folder if specified in the root config.xml.
+                <br>
+                <h5>Android</h5>
+                <i>/MyMobileApp/platforms/android/assets/res/xml.config.xml</i>. <br>
+                <br>
+                <p>Elements specified in <code>platform</code> tags will get copied/merged into
+                the platform-specific location noted above when they are found in the *root* config.xml.<br><br>
                 For instance, if you wanted to specify a preference for android only, surround it by this element with the platform
                 <code>name</code> attribute set to <bold>android</bold>.
 
+                <br><br>
+                <strong>Attribute</strong>
+                <br>
                 <div class="callout-info callout">
                     <p><i>name</i> The name of the platform in which to apply this configuration. </p>
+                </div>
+                <br>
+                <strong>Example</strong>
+                <div class="callout callout-more">
+                    <strong class="code2">
+                        &lt;platform name="android"&gt;<br>
+                            <span class="indent">&lt;preference name="Fullscreen" value="true" /&gt;</span><br>
+                        <!-- a preference specific to android only here -->
+                    &lt;/platform&gt;
+                        </strong>
                 </div>
             </div>
 
@@ -1287,7 +1324,7 @@
 
     </div>
 
-pwd
+
     <script src="lib/jquery-1.11.2.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 

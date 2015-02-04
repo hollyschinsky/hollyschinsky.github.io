@@ -57,6 +57,9 @@ a[href] p {
     position: fixed;
     top: 6%;
 }
+.code2 {
+    font-family: courier, monospace;
+}
 #config {
     font-family: courier, monospace;
     color: #053999;
