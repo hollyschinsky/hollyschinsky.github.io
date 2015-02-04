@@ -17,8 +17,8 @@
     <div class="col col-md-6">
 
     <div class="alert alert-info min">Hover over any element below for specific configuration details. These elements <mark>apply when using the PhoneGap or Cordova CLI</mark>,
-    if you're using <a href="http://build.phonegap.com">PhoneGap Build</a>, please see the <a href="http://docs.build.phonegap.com/en_US/configuring_config_file_element.md.html#Config%20File%20Elements">official PhoneGap Build Guide</a> or this
-    useful and free <a href="http://aj-software.com/configap/">ConfiGAP tool</a> for building your config.xml file for use with PhoneGap Build. </div>
+    if you're using <a class="lnk" href="http://build.phonegap.com">PhoneGap Build</a>, please see the <a class="lnk" href="http://docs.build.phonegap.com/en_US/configuring_config_file_element.md.html#Config%20File%20Elements">official PhoneGap Build Guide</a> or this
+    useful and free <a class="lnk" href="http://aj-software.com/configap/">ConfiGAP tool</a> for building your config.xml file for use with PhoneGap Build. </div>
         <!-- Border container for config source -->
             <!--<h4>config.xml</h4>-->
             <!--<div class="cont">-->
@@ -254,20 +254,26 @@
             <!-- PREFERENCES START -->
             <div id="overscroll" class="col col-md-10 hidediv scroll">
                 <h4>DisallowOverscroll</h4>
-                Set to <code>true</code> if you don't want the interface to display any feedback when users scroll past the beginning or end of content.<br>
+                Set to <code>true</code> if you don't want the interface to display any feedback when users scroll past the beginning or end of content.
+                <!--<div class="alert alert-warning">-->
+                   <br><mark>You'll likely want to include this preference in your config.xml to override the default and set to <code>true</code> to eliminate overscroll effects. This default was necessary for back-compatibility.</mark>
+                <!--</div>--><br><br>
 
-                <br><strong>Default</strong>
+                <strong>Default</strong>
                 <div class="callout-info callout">
                     <p><code>false (boolean)</code></p>
                 </div>
-                <strong>Supported Platforms</strong>
-                <div class="callout-platform callout">
-                    Android and iOS only
+
+                <div class="alert alert-success">
+                    On iOS, overscroll gestures cause content to bounce back to its original position.
+                    On Android, they produce a subtle glowing effect along the top or bottom edge of the content.
+                    (This property was renamed from <strong>UIWebViewBounce</strong> and referred to as <strong>webviewbounce</strong> on PhoneGap Build).
                 </div>
 
-                For example, on iOS the first video shows the default <code>false</code>, followed by <code>true</code><br><br>
-
-                <div class="row">
+                Here's an example of the effect on iOS. The first video shows the default <code>false</code> behavior, the second shows <code>true</code>.
+                (You may need to replay if stopped.)
+                <br><br>
+                <div class="row indent">
                     <video width="280" height="480" autoplay controls>
                         <source src="res/dis-overscroll-false.m4v" type="video/mp4">
 
@@ -279,16 +285,22 @@
                         Your browser does not support the video tag.
                     </video>
                 </div>
-
-                <div class="alert alert-success">
-                    On iOS, overscroll gestures cause content to bounce back to its original position.
-                    On Android, they produce a more subtle glowing effect along the top or bottom edge of the content.
-                    This property was renamed from <code>UIWebViewBounce</code>.
+            <br>
+                Below are some example images showing the effect when set to <code>false</code> on certain Android versions where this occurs:
+                <br><br>
+                <div class="row indent" style="margin-left: 15px">
+                    <img src="res/dis-android-false.jpg"/>
                 </div>
+                <br>
+                <strong>Supported Platforms</strong>
+                <div class="callout-platform callout">
+                    iOS and Android only (not all versions of Android)
+                </div>
+
                 <div style="height: 100px"></div>
             </div>
 
-            <div id="fullscreen" class="col col-md-10 hidediv">
+            <div id="fullscreen" class="col col-md-10 hidediv scroll">
                 <h4>Fullscreen</h4>
                 Set to true if to hide the status bar at the top of the screen.<br>
 
@@ -298,13 +310,52 @@
                 </div>
                 <strong>Supported Platforms</strong>
                 <div class="callout-platform callout">
-                    All platforms except iOS (see <a href="https://issues.apache.org/jira/browse/CB-6182"> here</a>)<br>
+                    All platforms except iOS (see <a class="lnk" href="https://issues.apache.org/jira/browse/CB-6182"> here</a>)<br>
                 </div>
-                <div class="alert alert-info">For iOS, you can use the <a href="https://github.com/apache/cordova-plugin-statusbar/blob/master/doc/index.md">StatusBarPlugin here</a></div>
+<br>
+                <h4>Android</h4>
+                <div class="row">
+
+                    <div class="col-md-4"><strong>Default</strong>
+                        <img src="res/fullscreen-android-false.png"/>
+                    </div>
+                    <div class="col-md-4"><strong>Fullscreen</strong>
+                        <img src="res/fullscreen-android-true.png"/>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="callout-platform callout">For iOS you can modify the application <i>&lt;myProject&gt;.plist</i> source file found in the <strong>/platforms/ios</strong> folder of the project
+                 with:
+                 <br>
+                <br>
+                <code>
+                    &lt;key&gt;UIStatusBarHidden&lt;/key><br>
+                    &lt;true/&gt;<br>
+                    &lt;key&gt;UIViewControllerBasedStatusBarAppearance&lt;/key&gt;<br>
+                    &lt;false/&gt;<br>
+                </code>
+                </div>
+
+                <br>
+                <h4>iOS</h4>
+                <div class="row">
+                    <div class="col-md-5"><strong>Default</strong>
+                        <img src="res/ios-with-statusbar-default.png"/>
+                    </div>
+                    <div class="col-md-5"><strong>Hidden Status Bar</strong>
+                        <img src="res/ios-hidden-statusbar.png"/>
+                    </div>
+                </div>
+                <br>
+                <div class="alert alert-info">You could also programmatically hide it using the <a class="lnk" href="https://github.com/apache/cordova-plugin-statusbar/blob/master/doc/index.md">StatusBarPlugin</a>, see the link for more details.
+                Also check out this interactive <a href="http://devgirl.org/2014/07/31/phonegap-developers-guid/">iOS StatusBar guide</a> for more details.</div>
+                <div style="height: 100px"></div>
             </div>
 
 
-            <div id="orientation" class="col col-md-10 hidediv">
+            <div id="orientation" class="col col-md-10 hidediv scroll">
                 <h4>Orientation</h4>
                 Orientation allows you to lock the orientation of the device the app is running on and prevent the interface from rotating in response to changes in orientation.<br>
 
@@ -315,7 +366,7 @@
                 </div>
                 <strong>Supported Platforms</strong>
                 <div class="callout-platform callout">
-                    All except iOS. For iOS you must modify the application plist file found in the Resources folder of the iOS project. You can add it manually to the plist source with:
+                    All except iOS. For iOS you must modify the application <i>&lt;myProject&gt;.plist</i> file found in the Resources folder of the iOS project. You can add it manually to the plist source with:
                     <br><br>
                     <code>
                         &lt;key&gt;UISupportedInterfaceOrientations&lt;/key&gt;<br>
@@ -326,8 +377,9 @@
                         <span class="indent">&lt;string&gt;UIInterfaceOrientationLandscapeRight&lt;/string&gt;</span><br>
                         &lt;/array&gt;
                     </code><br><br>
-                    Or if you open the .plist file in XCode, simply add the keys and values by clicking the + sign and adding those desired.
+                    Or if you open the <i>&lt;myProject&gt;.plist</i> file in XCode, simply add the keys and values by clicking the + sign and adding those desired.
                 </div>
+                <div style="height: 100px"></div>
             </div>
 
             <div id="backgroundcolor" class="col col-md-10 hidediv">
@@ -357,7 +409,7 @@
                 <div class="callout-platform callout">
                     BlackBerry, iOS<br><br>
 
-                    * Requires the <a href="https://github.com/apache/cordova-plugins/tree/master/keyboard">Keyboard plugin</a> for iOS.
+                    <mark>* Requires the <a class="lnk" href="https://github.com/apache/cordova-plugins/tree/master/keyboard">Keyboard plugin</a> for iOS.</mark>
                 </div>
             </div>
 
@@ -374,12 +426,29 @@
             <!--</feature>-->
 
 
-            <div id="enableviewportscale" class="col col-md-10 hidediv">
+            <div id="enableviewportscale" class="col col-md-10 hidediv scroll">
                 <h4>EnableViewportScale</h4>
-                Set to true to allow a viewport meta tag to either disable or restrict the range of user scaling, which is enabled by default.
+                Set to <code>true</code> to allow the <strong>viewport</strong> meta tag to either disable or restrict the range of user scaling, which is enabled by default.
                 <br><br>
-                Place a viewport in the HTML to disable scaling and fit content flexibly within the rendering WebView:
-                &lt;meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no' /&gt;
+                Place a <strong>viewport</strong> meta tag in your <i>index.html</i> to disable scaling and fit content flexibly within the rendering webview, such as:<br>
+                <code>&lt;meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'/&gt;</code>
+                <br><br>
+                <p>Below shows an example of setting this property to <code>true</code> on iOS with a meta-tag of:<br>
+                    <code>&lt;meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1'/&gt;</code>
+                </p><br>
+                <video width="280" height="480" autoplay controls class="indent">
+                    <source src="res/viewport-scale-enabled.m4v" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
+                <br>
+                <p>See these links below for details on configuring your viewport:</p>
+                <ul>
+                    <li><a class='lnk' href="https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html#//apple_ref/doc/uid/TP40008193-SW3">Apple Viewport Guidelines</a></li>
+                    <li><a class='lnk' href="https://developers.google.com/speed/docs/insights/ConfigureViewport">Google Viewport Guidelines</a></li>
+                    <li><a class='lnk' href="https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag">Mozilla Viewport Guidelines</a></li>
+                </ul>
+
 
                 <br><strong>Default</strong>
                 <div class="callout-info callout">
@@ -387,13 +456,18 @@
                 </div>
                 <strong>Supported Platforms</strong>
                 <div class="callout-platform callout">
-                    iOS
+                    iOS (the viewport meta tag is supported on other platforms, this refers to the <code>EnableViewportScale</code> setting specifically)
                 </div>
+                <div class="alert alert-danger">
+                    Be sure to use the guidelines in the above documents wisely since it is possible to negatively impact accessibility.
+                </div>
+
+                <div style="height: 100px"></div>
             </div>
 
             <div id="mediaplaybackrequires" class="col col-md-10 hidediv">
                 <h4>MediaPlaybackRequiresUserAction</h4>
-                Set to true to prevent HTML5 videos or audios from playing automatically with the autoplay attribute or via JavaScript.
+                Set to true to prevent HTML5 videos or audios from playing automatically with the <code>autoplay</code> attribute or via JavaScript.
                 <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
@@ -805,7 +879,7 @@
                 <h4>WebSecurity </h4>
                 Set to <code>disable</code> to override web security settings, allowing access to remote content from unknown sources. This preference is intended as
                 a development convenience only, so remove it before packaging the app for distribution. For the released app, all URIs should
-                be known and whitelisted using the <code>&lt;access&gt;</code> element, described in the <a href="http://docs.phonegap.com/en/4.0.0/guide_appdev_whitelist_index.md.html#Whitelist%20Guide">Domain Whitelist Guide</a>.
+                be known and whitelisted using the <code>&lt;access&gt;</code> element, described in the <a class="lnk" href="http://docs.phonegap.com/en/4.0.0/guide_appdev_whitelist_index.md.html#Whitelist%20Guide">Domain Whitelist Guide</a>.
                 <br><br>
                 <strong>Default</strong>
                 <div class="callout-info callout">
@@ -1089,7 +1163,7 @@
             <div id="access" class="col col-md-10 hidediv">
                 <h4>Access</h4> (optional) Defines the set of external domains the app is allowed to communicate with. The "*" value for origin will allow  the app to access any server.
                 <br><br>
-                See the <a href="http://docs.phonegap.com/en/edge/guide_appdev_whitelist_index.md.html#Whitelist%20Guide">Domain Whitelist Guide for details.</a>
+                See the <a class="lnk" href="http://docs.phonegap.com/en/edge/guide_appdev_whitelist_index.md.html#Whitelist%20Guide">Domain Whitelist Guide for details.</a>
                 <div class="callout-info callout">
                     <p><i>origin</i> The domains to allow. Set to "*" for all.</p>
                 </div>
@@ -1147,10 +1221,13 @@
     <script>
             $("a").hover(
                 function () {
-                    $(".showdiv").removeClass("showdiv");
+                    console.log("this.className" + this.className);
+                    if (this.className!='lnk') {
+                        $(".showdiv").removeClass("showdiv");
 
-                    var el = document.getElementById(this.hash.substr(1));
-                    $(el).addClass("showdiv");
+                        var el = document.getElementById(this.hash.substr(1));
+                        $(el).addClass("showdiv");
+                    }
                 }
             )
     </script>

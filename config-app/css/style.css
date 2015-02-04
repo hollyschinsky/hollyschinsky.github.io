@@ -76,6 +76,12 @@ a:hover {
     background-color: #fffacd;
     text-decoration: none;
 }
+a:hover .lnk {
+    /*border: 1px solid #17996e;*/
+    /*background-color: #fffacd;
+    text-decoration: none;*/
+}
+
 .tag-value {
     color: #323232;
 
