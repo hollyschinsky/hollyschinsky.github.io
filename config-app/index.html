@@ -11,17 +11,24 @@
 
 <body>
 
-    <div>
+    <!--<div>-->
+
+
+            <!--<div style="height: 100px"></div>-->
+            <!--<p>There may be additional preferences supported when using plugins, such as the <a href="https://github.com/apache/cordova-plugin-splashscreen/blob/master/doc/index.md">Splash Screen plugin</a>, <a href="https://github.com/apache/cordova-plugin-statusbar/blob/master/doc/index.md">-->
+                <!--StatusBar plugin </a>etc. Please visit the plugin documentation for those details. </p>-->
+            <!--<div style="height: 100px"></div>-->
+
+    </div>
+
+
+
+<div class="col col-md-6">
     <h3 class="title">Configuring PhoneGap</h3>
-
-    <div class="col col-md-6">
-
     <div class="alert alert-info min">Hover over any element below for specific configuration details. These elements <mark>apply when using the PhoneGap or Cordova CLI</mark>,
-    if you're using <a class="lnk" href="http://build.phonegap.com" target="_blank">PhoneGap Build</a>, please see the <a class="lnk" href="http://docs.build.phonegap.com/en_US/configuring_config_file_element.md.html#Config%20File%20Elements" target="_blank">official PhoneGap Build Guide</a> or this
-    useful and free <a class="lnk" href="http://aj-software.com/configap/" target="_blank">ConfiGAP tool</a> for building your config.xml file for use with PhoneGap Build. </div>
-        <!-- Border container for config source -->
-            <!--<h4>config.xml</h4>-->
-            <!--<div class="cont">-->
+        if you're using <a class="lnk" href="http://build.phonegap.com" target="_blank">PhoneGap Build</a>, please see the <a class="lnk" href="http://docs.build.phonegap.com/en_US/configuring_config_file_element.md.html#Config%20File%20Elements" target="_blank">official PhoneGap Build Guide</a> or this
+        useful and free <a class="lnk" href="http://aj-software.com/configap/" target="_blank">ConfiGAP tool</a> for building your config.xml file for use with PhoneGap Build. </div>
+
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -33,9 +40,9 @@
                 <p>
                     <a href="#widget">
                         &lt;widget xmlns="http://www.w3.org/ns/widgets"
-                                <span class="indent">xmlns:gap="http://phonegap.com/ns/1.0"</span>
-                                <span class="indent">id="com.phonegap.helloworld"</span>
-                                <span>version="1.0.0"&gt;</span>
+                        <span class="indent">xmlns:gap="http://phonegap.com/ns/1.0"</span>
+                        <span class="indent">id="com.phonegap.helloworld"</span>
+                        <span>version="1.0.0"&gt;</span>
                     </a>
                 </p>
                 <br>
@@ -108,18 +115,18 @@
                     <a href="#hidekeyboard">&lt;preference name="HideKeyboardFormAccessoryBar" value="false"/&gt;</a><br><br>
                     <a href="#backgroundcolor">&lt;preference name="BackgroundColor" value="0xff0000ff"/&gt;</a><br><br>
 
-                <br>
+                    <br>
 
+                    <!--<button id="iosBtn" type="button" class="btn btn-success btn-lg" data-toggle="collapse" title="iOS preferences"-->
+                            <!--data-target="#iosPrefs">Show iOS Preferences</button>-->
 
-                <button id="iosBtn" type="button" class="btn btn-success btn-lg" data-toggle="collapse" title="iOS preferences"
-                        data-target="#iosPrefs">Show iOS Preferences</button>
-
-                <p id="iosPrefs" class="collapse out">
-                    &lt;!--iOS Preferences</code>--&gt;<br>
+                <!--<p id="iosPrefs" class="collapse out">-->
+                <p id="iosPrefs">
+                    <h4 class="prefs">&lt;!--iOS Preferences</code>--&gt;</h4>
                     <a href="#enableviewportscale">&lt;preference name="EnableViewportScale" value="true"/&gt;</a>  <br><br>
                     <a href="#keyboardrequires">&lt;preference name="KeyboardDisplayRequiresUserAction" value="false"/&gt;</a><br><br>
-                <!-- No longer used - in core -->
-                <!--<a href="#topactivityindicator">&lt;preference name="TopActivityIndicator" value="white"/&gt;</a><br><br>-->
+                    <!-- No longer used - in core -->
+                    <!--<a href="#topactivityindicator">&lt;preference name="TopActivityIndicator" value="white"/&gt;</a><br><br>-->
 
                     <a href="#mediaplaybackrequires">&lt;preference name="MediaPlaybackRequiresUserAction" value="true"/&gt;</a><br><br>
                     <a href="#allowinlinemediaplayback">&lt;preference name="AllowInlineMediaPlayback" value="true"/&gt;</a><br><br>
@@ -134,12 +141,13 @@
 
                 <br>
 
-                <button id="androidBtn" type="button" class="btn btn-info btn-lg" data-toggle="collapse" title="Android preferences"
-                        data-target="#androidPrefs">Show Android Preferences</button>
+                <!--<button id="androidBtn" type="button" class="btn btn-info btn-lg" data-toggle="collapse" title="Android preferences"-->
+                        <!--data-target="#androidPrefs">Show Android Preferences</button>-->
 
 
-                <p id="androidPrefs" class="collapse out">
-                    &lt;!--Android Preferences</code>--&gt;<br><br>
+                <!--<p id="androidPrefs" class="collapse out">-->
+                <p id="androidPrefs">
+                    <h4 class="prefs">&lt;!--Android Preferences</code>--&gt;</h4>
                     <a href="#keeprunning">&lt;preference name="KeepRunning" value="false"/&gt;</a>  <br><br>
                     <a href="#loadurltimeoutvalue">&lt;preference name="LoadUrlTimeoutValue" value="10000"/&gt;</a><br><br>
                     <a href="#splashscreen">&lt;preference name="SplashScreen" value="mySplash"/&gt;</a><br><br>
@@ -153,13 +161,13 @@
                     <a href="#setfullscreen">&lt;preference name="SetFullscreen" value="false"/&gt;</a><br><br>
                     <a href="#androidlaunchmode">&lt;preference name="AndroidLaunchMode" value="singleTop"/&gt;</a><br><br>
                 </p>
-                <br>
-                <br>
-                <button id="bbBtn" type="button" class="btn btn-primary btn-lg" data-toggle="collapse" title="BlackBerry preferences"
-                        data-target="#bbPrefs">Show BlackBerry 10 Preferences</button>
 
-                <p id="bbPrefs" class="collapse out">
-                    &lt;!--BlackBerry 10 Preferences</code>--&gt;<br>
+                <!--<button id="bbBtn" type="button" class="btn btn-primary btn-lg" data-toggle="collapse" title="BlackBerry preferences"-->
+                        <!--data-target="#bbPrefs">Show BlackBerry 10 Preferences</button>-->
+
+                <!--<p id="bbPrefs" class="collapse out">-->
+                <p id="bbPrefs">
+                    <h4 class="prefs">&lt;!--BlackBerry 10 Preferences</code>--&gt;</h4>
                     <a href="#childbrowser">&lt;preference name="ChildBrowser" value="disable"/&gt;</a>  <br>
                     <a href="#popupblocker">&lt;preference name="PopupBlocker" value="enable""/&gt;</a><br>
                     <a href="#websecurity">&lt;preference name="WebSecurity" value="disable"/&gt;</a><br>
@@ -195,24 +203,16 @@
                 <br>
 
             </div>
-         </div>
+        </div>
 
         <div class="panel-footer">
-            <p>There may be additional preferences supported when using plugins, such as the <a href="https://github.com/apache/cordova-plugin-splashscreen/blob/master/doc/index.md">Splash Screen plugin</a>, <a href="https://github.com/apache/cordova-plugin-statusbar/blob/master/doc/index.md">
+            <p>There may be additional preferences supported when using plugins, such as the <a class="lnk" href="https://github.com/apache/cordova-plugin-splashscreen/blob/master/doc/index.md" target="_blank">Splash Screen plugin</a>, <a href="https://github.com/apache/cordova-plugin-statusbar/blob/master/doc/index.md" target="_blank">
                 StatusBar plugin </a>etc. Please visit the plugin documentation for those details. </p>
 
         </div>
     </div>
-
-            <!--<div style="height: 100px"></div>-->
-            <!--<p>There may be additional preferences supported when using plugins, such as the <a href="https://github.com/apache/cordova-plugin-splashscreen/blob/master/doc/index.md">Splash Screen plugin</a>, <a href="https://github.com/apache/cordova-plugin-statusbar/blob/master/doc/index.md">-->
-                <!--StatusBar plugin </a>etc. Please visit the plugin documentation for those details. </p>-->
-            <!--<div style="height: 100px"></div>-->
-
     </div>
-
-
-    <div id="desc">
+    <div id="desc" class="col-md-6">
             <div id="widget" class="col col-md-10 hidediv">
                 <h4>Widget</h4> <span class="required">(required)</span> The root element of the config.xml with some identifying attributes:<br>
                 <br>
@@ -221,7 +221,7 @@
                 <div class="callout-info callout">
                     <p><i>id</i> <span class="required">(required)</span> Reverse-domain identifier for the app</p>
                     <p><i>version</i><span class="required">(required)</span>  Full version number expressed in major/minor/patch notation</p>
-                    <p><i>versionCode</i> (Android only) Internal version number (more details <a href="http://developer.android.com/tools/publishing/versioning.html">here</a>).</p>
+                    <p><i>versionCode</i> (Android only) Internal version number (more details <a class="lnk" href="http://developer.android.com/tools/publishing/versioning.html">here</a>).</p>
                     <p><i>cfBundleVersion</i> (iOS only) Internal version number</p>
                 </div>
             </div>
@@ -254,6 +254,72 @@
                     <p><i>src</i> The file name/location of the starting page. Defaults to index.html.</p>
                 </div>
             </div>
+            <div id="feature" class="col col-md-10 hidediv">
+                <h4>Feature</h4> Used for the specific case of updating the platform-level config.xml to include a certain plugin or customization
+                specific to that platform.
+                <br><br>
+                <strong>Attributes</strong>
+                <br>
+                <div class="callout-info callout">
+                    <p><i>name</i> The name of a specific feature, typically a plugin API to access.</p><br>
+                    <strong>Child elements</strong>
+                    <br><p><i>param</i> The name of the parameter to set a name and value for.</p>
+                    <ul>
+                        <li><i>name</i> The name of the parameter to set a name and value for.</li>
+                        <li><i>value</i> The name of the parameter to set a name and value for.</li>
+                    </ul>
+                </div>
+
+                <div class="alert alert-danger">Not typically used with the CLI. </div>
+
+            </div>
+
+            <div id="accessOrigin" class="col col-md-10 hidediv">
+                <h4>Access</h4> (optional) Defines the set of external domains the app is allowed to communicate with. The "*" value for origin will allow  the app to access any server.
+                <br><br>
+                See the <a class="lnk" href="http://docs.phonegap.com/en/edge/guide_appdev_whitelist_index.md.html#Whitelist%20Guide" target="_blank">Domain Whitelist Guide for details.</a>
+                <br><br>
+                <strong>Attributes</strong>
+                <br>
+                <div class="callout-info callout">
+                    <p><i>origin</i> The domains to allow. Set to <code>"*"</code> for all.</p>
+                </div>
+                <div class="alert alert-danger">Currently required for iOS (fix in the works), otherwise defaults to all or ("*") if left out. </div>
+            </div>
+
+            <div id="platform" class="col col-md-10 hidediv scroll">
+                <h4>Platform</h4>
+                Use this element to specify configuration that should only appear in a single platform-specific <b>config.xml</b> file used by that platform
+                at runtime. The paths to these files for iOS and Android are:
+                <h5>iOS</h5>
+                <i>~/MyMobileApp/platforms/ios/MyMobileApp/config.xml</i>
+                <br>
+                <h5>Android</h5>
+                <i>/MyMobileApp/platforms/android/assets/res/xml.config.xml</i>. <br>
+                <br>
+                <p>Elements specified in <code>platform</code> tags will get copied/merged into
+                    the platform-specific location noted above when they are found in the *root* config.xml.<br><br>
+                    For instance, if you wanted to specify a preference for android only, surround it by this element with the platform
+                    <code>name</code> attribute set to <bold>android</bold>.
+
+                    <br><br>
+                    <strong>Attribute</strong>
+                    <br>
+                <div class="callout-info callout">
+                    <p><i>name</i> The name of the platform in which to apply this configuration. </p>
+                </div>
+                <br>
+                <strong>Example</strong>
+                <div class="callout callout-more">
+                    <strong class="code2">
+                        &lt;platform name="android"&gt;<br>
+                        <span class="indent">&lt;preference name="Fullscreen" value="true" /&gt;</span><br>
+                        <!-- a preference specific to android only here -->
+                        &lt;/platform&gt;
+                    </strong>
+                </div>
+                <!--<div style="height: 100px"></div>-->
+            </div>
 
             <div id="preference" class="col col-md-10 hidediv">
                 <h4>Preference</h4> Sets different options for your application as pairs of name/value attributes.
@@ -274,7 +340,6 @@
                 <h4>DisallowOverscroll</h4>
                 Set to <code>true</code> if you don't want the interface to display any feedback when users scroll past the beginning or end of content.
                 <br>
-
 
                 <br>
                 <strong>Default</strong>
@@ -319,7 +384,7 @@
                     iOS and Android only (not all versions of Android)
                 </div>
 
-                <div style="height: 100px"></div>
+                <!--<div style="height: 100px"></div>-->
             </div>
 
             <div id="fullscreen" class="col col-md-10 hidediv scroll">
@@ -347,7 +412,7 @@
                         <img src="res/fullscreen-android-true.png"/>
                     </div>
                 </div>
-<br>
+                <br>
 
                 <div class="callout-platform callout">For iOS you can modify the application <i>&lt;myProject&gt;.plist</i> source file found in the <strong>/platforms/ios</strong> folder of the project
                  with:
@@ -372,8 +437,8 @@
                     </div>
                 </div>
                 <div class="alert alert-info">You could also programmatically hide it using the <a class="lnk" href="https://github.com/apache/cordova-plugin-statusbar/blob/master/doc/index.md">StatusBarPlugin</a>, see the link for more details.
-                    Also check out this interactive <a href="http://devgirl.org/2014/07/31/phonegap-developers-guid/">iOS StatusBar guide</a> for more details.</div>
-                <div style="height: 100px"></div>
+                    Also check out this interactive <a class="lnk" href="http://devgirl.org/2014/07/31/phonegap-developers-guid/" target="_blank">iOS StatusBar guide</a> for more details.</div>
+                <!--<div style="height: 100px"></div>-->
             </div>
 
 
@@ -389,7 +454,7 @@
                 </div>
 
                 <h4>Example (Android)</h4>
-                <div class="row indent">
+                <div class="row">
                     <div class="col-md-6">
                         <strong>Orientation set to <code>portrait</code></strong>
                         <video width="280" height="480" autoplay loop controls>
@@ -436,7 +501,7 @@
                     Or if you open the <i>&lt;myProject&gt;.plist</i> file in XCode (look under <strong>Resources/</strong>), simply add the keys and values by clicking the + sign and adding those desired.
                 </div>
 
-                <div style="height: 100px"></div>
+                <!--<div style="height: 100px"></div>-->
             </div>
 
             <div id="backgroundcolor" class="col col-md-10 hidediv scroll">
@@ -459,7 +524,7 @@
                     Your browser does not support the video tag.
                 </video>
                 <div class="alert alert-info">For other platforms you can override the CSS by using something like:<br> <code>body { background-color:blue }</code></div>
-                <div style="height: 100px"></div>
+                <!--<div style="height: 100px"></div>-->
             </div>
 
             <div id="hidekeyboard" class="col col-md-10 hidediv scroll">
@@ -476,7 +541,7 @@
                     BlackBerry, iOS<br><br>
 
                     <mark>* Requires the <a class="lnk" href="https://github.com/apache/cordova-plugins/tree/master/keyboard" target="_blank">Keyboard plugin</a> for iOS.
-                    If you have trouble with it on iOS8, check out <a href="https://github.com/driftyco/ionic-plugins-keyboard">this one.</a></mark>
+                    If you have trouble with it on iOS8, check out <a class="lnk" href="https://github.com/driftyco/ionic-plugins-keyboard" target="_blank">this one.</a></mark>
                 </div>
                 <h4>iOS</h4>
                 <div class="row">
@@ -491,7 +556,7 @@
                     </div>
                 </div>
                 <br>
-                <div style="height: 100px"></div>
+                <!--<div style="height: 100px"></div>-->
             </div>
 
             <!-- iOS Preferences -->
@@ -543,7 +608,7 @@
                     Be sure to use the guidelines in the above documents wisely since it is possible to negatively impact accessibility.
                 </div>
 
-                <div style="height: 100px"></div>
+                <!--<div style="height: 100px"></div>-->
             </div>
 
             <div id="keyboardrequires" class="col col-md-10 hidediv scroll">
@@ -582,7 +647,7 @@
                         </div>
                     </div>
                 </div>
-                <div style="height: 100px"></div>
+                <!--<div style="height: 100px"></div>-->
             </div>
 
             <div id="mediaplaybackrequires" class="col col-md-10 hidediv">
@@ -1246,82 +1311,8 @@
                 </div>
             </div>
 
-            <div id="access2" class="col col-md-10 hidediv">
-                <h4>Access</h4> (optional) Defines the set of external domains the app is allowed to communicate with. The "*" value for origin will allow  the app to access any server.
-                <br><br>
-                See the <a class="lnk" href="http://docs.phonegap.com/en/edge/guide_appdev_whitelist_index.md.html#Whitelist%20Guide" target="_blank">Domain Whitelist Guide for details.</a>
-                <br>
-                <div class="callout-info callout">
-                    <p><i>origin</i> The domains to allow. Set to <code>"*"</code> for all.</p>
-                </div>
-                <div class="alert alert-danger">Currently required for iOS (fix in the works), otherwise defaults to all or ("*") if left out. </div>
-            </div>
 
-            <div id="feature" class="col col-md-10 hidediv">
-                <h4>Feature</h4> Used for the specific case of updating the platform-level config.xml to include a certain plugin or customization
-                specific to that platform.
-                <br><br>
-                <strong>Attributes</strong>
-                <br>
-                <div class="callout-info callout">
-                    <p><i>name</i> The name of a specific feature, typically a plugin API to access.</p><br>
-                    <strong>Child elements</strong>
-                        <br><p><i>param</i> The name of the parameter to set a name and value for.</p>
-                        <ul>
-                            <li><i>name</i> The name of the parameter to set a name and value for.</li>
-                            <li><i>value</i> The name of the parameter to set a name and value for.</li>
-                        </ul>
-                </div>
 
-                <div class="alert alert-danger">Not typically used with the CLI. </div>
-
-            </div>
-
-            <div id="accessOrigin" class="col col-md-10 hidediv">
-                <h4>Access</h4> (optional) Defines the set of external domains the app is allowed to communicate with. The "*" value for origin will allow  the app to access any server.
-                <br><br>
-                See the <a class="lnk" href="http://docs.phonegap.com/en/edge/guide_appdev_whitelist_index.md.html#Whitelist%20Guide" target="_blank">Domain Whitelist Guide for details.</a>
-                <br><br>
-                <strong>Attributes</strong>
-                <br>
-                <div class="callout-info callout">
-                    <p><i>origin</i> The domains to allow. Set to <code>"*"</code> for all.</p>
-                </div>
-                <div class="alert alert-danger">Currently required for iOS (fix in the works), otherwise defaults to all or ("*") if left out. </div>
-            </div>
-
-            <div id="platform" class="col col-md-10 hidediv">
-                <h4>Platform</h4>
-                Use this element to specify configuration that should only appear in a single platform-specific <b>config.xml</b> file used by that platform
-                at runtime. The paths to these files for iOS and Android are:
-                <h5>iOS</h5>
-                <i>~/MyMobileApp/platforms/ios/MyMobileApp/config.xml</i>
-                <br>
-                <h5>Android</h5>
-                <i>/MyMobileApp/platforms/android/assets/res/xml.config.xml</i>. <br>
-                <br>
-                <p>Elements specified in <code>platform</code> tags will get copied/merged into
-                the platform-specific location noted above when they are found in the *root* config.xml.<br><br>
-                For instance, if you wanted to specify a preference for android only, surround it by this element with the platform
-                <code>name</code> attribute set to <bold>android</bold>.
-
-                <br><br>
-                <strong>Attribute</strong>
-                <br>
-                <div class="callout-info callout">
-                    <p><i>name</i> The name of the platform in which to apply this configuration. </p>
-                </div>
-                <br>
-                <strong>Example</strong>
-                <div class="callout callout-more">
-                    <strong class="code2">
-                        &lt;platform name="android"&gt;<br>
-                            <span class="indent">&lt;preference name="Fullscreen" value="true" /&gt;</span><br>
-                        <!-- a preference specific to android only here -->
-                    &lt;/platform&gt;
-                        </strong>
-                </div>
-            </div>
 
         </div>
 

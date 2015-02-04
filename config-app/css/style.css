@@ -49,13 +49,20 @@ a[href] p {
 }
 .title {
     border-bottom: 2px solid #e2e2e2;
+    /*left: 49%;*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*margin-top: 5px;*/
 }
 #desc {
     left: 49%;
     height: 100%;
     width: 54%;
     position: fixed;
-    top: 6%;
+    top: 0;
+    margin-top: 10px;
 }
 .code2 {
     font-family: courier, monospace;
@@ -64,6 +71,10 @@ a[href] p {
     font-family: courier, monospace;
     color: #053999;
     font-size: 16px;
+}
+.prefs {
+    color: #994992;
+    font-weight: bold;
 }
 .value {
     color: #0e992a;
@@ -101,6 +112,8 @@ a:hover {
     bottom: 0px;
     left: 0px;
     right: 0px;
+    margin-bottom: 15px;
+    width: 90%;
 }
 .min {
     margin-right: 20px;
