@@ -9,16 +9,8 @@ document.addEventListener('init', function(event) {
     if (myApp.controllers.hasOwnProperty(page.id)) {
         myApp.controllers[page.id](page);        
     }      
-});
 
-// Device Ready Event Handler
-//   1 - Check for the connection to detect offline situations and add event handlers for when it goes
-//       on/offline based on platform
-//   2 - Create the database depending on platform. If mobile we may want to use SQLite adapter. This could
-//       fail when running in mobile device emulation mode since SQLite plugin thinks it's on a device due to
-//       user agent (onsen platform value too)    
-document.addEventListener('deviceready', function () {
-    console.log("Device ready event fired ");
+    // Would normally call to do pouchDB on device ready from Cordova app
     myApp.isOnline = navigator.onLine; // browser flag for checking connection (may not always work)
     var dbName = 'my_todos.db';        // use a different local name for each to test multiple concurrent browsers
 
