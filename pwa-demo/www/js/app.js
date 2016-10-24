@@ -9,8 +9,10 @@ document.addEventListener('init', function(event) {
     if (myApp.controllers.hasOwnProperty(page.id)) {
         myApp.controllers[page.id](page);        
     }      
+});
 
-    // Would normally call to do pouchDB on device ready from Cordova app
+// NOTE: Call to do pouchDB on device ready from a Cordova app
+document.addEventListener("DOMContentLoaded", function(event) {    
     myApp.isOnline = navigator.onLine; // browser flag for checking connection (may not always work)
     var dbName = 'my_todos.db';        // use a different local name for each to test multiple concurrent browsers
 
@@ -62,7 +64,7 @@ document.addEventListener('init', function(event) {
     })
     
     // Load existing data (if any)
-    //myApp.services.pouch.loadData();
+    myApp.services.pouch.loadData();
 
     // Turn on live 2-way syncing
     myApp.services.pouch.sync();
