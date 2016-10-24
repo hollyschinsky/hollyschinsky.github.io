@@ -62,7 +62,7 @@ document.addEventListener('init', function(event) {
     })
     
     // Load existing data (if any)
-    myApp.services.pouch.loadData();
+    //myApp.services.pouch.loadData();
 
     // Turn on live 2-way syncing
     myApp.services.pouch.sync();
