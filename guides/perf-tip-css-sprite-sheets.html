@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>perf-tip-css-sprite-sheets.md</title>
+
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+</head>
+<body id="preview">
+<h3><a id="Performance_Tip_Using_CSS_Sprite_Sheets_0"></a>Performance Tip: Using CSS Sprite Sheets</h3>
+<h4><a id="Problem_2"></a>Problem</h4>
+
+<p>Using images in your mobile applications enhances the overall look but at the same time causes them run much slower
+    since each background image requires another HTTP request.</p>
+<h4><a id="Solution_5"></a>Solution</h4>
+
+<p>With the use of CSS Sprite Sheets you can combine an unlimited number of images into one and the server only has to
+    send one image file containing all of your images rather than each individual one. Then you can display any segment
+    from that file as a background to an element through CSS styling.</p>
+
+<p>To use specific segments from a CSS sprite sheet for a background image for instance, just create a new image that is
+    as wide as your widest image and and as tall as the combined height of all your images plus X pixels, where X is the
+    number of images you have. Then place your images into this new image, left aligned, one on top of the other with
+    one pixel of white space in between.</p>
+<h6><a id="nav_li_a_backgroundimageurlimgimage_navgif_10"></a>#nav li a {background-image:url(’…/img/image_nav.gif’)}
+</h6>
+<h6><a id="nav_li_aitem1_backgroundposition0px_0px_11"></a>#nav li a.item1 {background-position:0px 0px}</h6>
+<h6><a id="nav_li_ahoveritem1_backgroundposition0px_72px_12"></a>#nav li a:hover.item1 {background-position:0px -72px}
+</h6>
+<h6><a id="nav_li_aitem2_backgroundposition0px_143px_13"></a>#nav li a.item2 {background-position:0px -143px;}</h6>
+<h6><a id="nav_li_ahoveritem2_backgroundposition0px_215px_14"></a>#nav li a:hover.item2 {background-position:0px
+    -215px;}</h6>
+
+<p>You can use a tool like <a href="http://www.spritecow.com/">Sprite Cow</a> to help you define sprite sheets and just
+    grab the corresponding CSS.</p>
+
+</body>
+</html>

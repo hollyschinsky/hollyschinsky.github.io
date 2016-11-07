@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Managing Click Delay</title>
+</head>
+<body id="preview">
+<h2><a id="Performance_Tip_Managing_Click_Delay_0"></a>Performance Tip: Managing Click Delay</h2>
+<h4><a id="Problem_2"></a>Problem</h4>
+
+<p>When beginning mobile development, you may notice that your app feels a bit sluggish when you tap on the screen. This
+    is because the mobile web browser is trying to interpret touch commands to map them to old-style <em>click</em>
+    events. The browser receives a <em>touchstart</em> event first, then it listens to see if the finger is going to
+    move to scroll or release to become a tap before it fires the click event your app is listening for. These same
+    browser engines also have a <em>double-tap-to-zoom</em> function so then thereb's the issue of distinguishing
+    between a <em>tap</em> and <em>double tap</em>.</p>
+
+<p>The total lag introduced by the browser trying to interpret the <em>touch</em> event to <em>click</em> event mapping
+    is about 300ms. 300ms may not sound like a lot but itb's more than enough to make an app feel noticeable lag.</p>
+
+<h4><a id="Solution_8"></a>Solution</h4>
+
+<p>Use a <strong>touch-to-click</strong> polyfill like <a href="https://ftlabs.github.io/fastclick/
+">FastClick</a>. FastClick is a library you can
+    implement to take the incoming touch events and maps them to the click event without the 300ms delay. An example of
+    one way to use it is shown below, see their documentation for more details.</p>
+<pre><code>window.addEventListener('load', function() {
+    FastClick.attach(document.body);
+    }, false);
+</code></pre>
+<p>Use a UI framework with built-in handling for this issue, such as <a
+        href="http://ionicframework.com">Ionic</a>, <a
+        href="http://www.idangero.us/framework7/">Framework7</a> and <a href="http://onsenui.io">OnsenUI</a>.</p>
+
+</body>
+</html>

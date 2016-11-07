@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>perf-tip-hardware-acceleration.md</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+</head>
+<body id="preview">
+<h3><a id="Performance_Tip_Hardware_Acceleration_0"></a>Performance Tip: Hardware Acceleration</h3>
+
+<p>Many devices have a separate GPU that can be tapped by invoking a CSS transform on them. In effect, this trick is all
+    about rendering your element the same as it always is but by telling the browser that you want a 3D transform,
+    you’re moving the rendering of this element from the CPU to the GPU. You can do this by applying a simple CSS <code>translate3d</code>
+    shown below.</p>
+<pre><code>.accelerated {
+    transform: translate3d(0,0,0);
+    }
+
+    transform: translateZ
+    will-change: transform
+    will-change: opacity
+</code></pre>
+<p>In Chrome and Safari you might see a flickering effect when using CSS transforms and need the declaration of <code>-webkit-backface-visibility:hidden;
+    &amp; -webkit-perspective: 1000;</code> to fix the issue.</p>
+
+<p>You need to be careful using CSS 3D transforms in this manner however because the amount of memory available on the
+    GPU is limited and exceeding it can cause your app to crash. You should use this trick with more complex parts of
+    views where you apply it to the top-level element.</p>
+
+<p>Check out these great references for smore details:</p>
+<ol>
+    <li><a href="https://dev.opera.com/articles/css-will-change-property/">Everything You Need to Know About the CSS
+        will-change Property</a></li>
+    <li><a href="http://www.infoq.com/interviews/arel-hybrid-mobile-development">Dave Arel on Hybrid Mobile
+        Development</a></li>
+</ol>
+
+</body>
+</html>

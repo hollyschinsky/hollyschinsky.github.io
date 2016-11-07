@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Minimizing Reflows</title>
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    </head>
+    <body id="preview">
+        <h3><a id="Performance_Tip_Animate_Wisely_to_Minimize_Reflows_0"></a>Performance Tip: Animate Wisely to Minimize Reflows</h3>
+        <h4><a id="Problem_2"></a>Problem:</h4>
+        <p>Animating properties that cause a change to visibility (width/height, color, outline) or layout will trigger a reflow or repaint, which is too expensive in terms of performance for mobile browsers to handle.</p>
+        <h4><a id="Solution_5"></a>Solution:</h4>
+        <p>Stick to animating <code>transform</code> and <code>opacity</code> properties only until mobile web browsers are more optimized and can support more frames per second.</p>
+        <p>A <strong>reflow</strong> computes the layout of the page.  A reflow on an element recomputes the dimensions and position of the element, and it also triggers further reflows on that element’s children, ancestors and elements that appear after it in the DOM.  Then it calls a final repaint.  Reflowing is very expensive, but unfortunately it can be triggered easily.</p>
+        <p>A repaint occurs when changes are made to an elements skin that changes visibility, but do not affect its layout. Examples of this include outline, visibility, or background color. Repaint is expensive because the browser must verify the visibility of all other nodes in the DOM tree. A reflow is even more critical to performance because it involves changes that affect the layout of a portion of the page (or the whole page). Reflow of an element causes the subsequent reflow of all child and ancestor elements as well as any elements following it in the DOM.</p>
+
+        <p>For example:</p>
+        <pre><code>&lt;body&gt;
+            &lt;div class=&quot;error&quot;&gt;
+                &lt;h4&gt;My Module&lt;/h4&gt;
+                &lt;p&gt;&lt;strong&gt;Error:&lt;/strong&gt;Description of the error&lt;/p&gt;
+                &lt;h5&gt;Corrective action required:&lt;/h5&gt;
+                &lt;ol&gt;
+                    &lt;li&gt;Step one&lt;/li&gt;
+                    &lt;li&gt;Step two&lt;/li&gt;
+                &lt;/ol&gt;
+            &lt;/div&gt;
+        &lt;/body&gt;
+        </code></pre>
+        <p>In the HTML snippet above, a reflow on the paragraph would trigger a reflow of the <code>strong</code> because it is a child node. It would also cause a reflow of the ancestors (<code>&lt;div class=&quot;error&quot;&gt;</code> and <code>&lt;body&gt;</code> depending on the browser). In addition, the <code>&lt;h5&gt;</code> and <code>&lt;ol&gt;</code> would be reflowed simply because they follow that element in the DOM.</p>
+        <p>Reflows are expensive and are one of the main causes of slow DOM scripts, particularly on devices with low processing power, such as phones. In many cases, they are equivalent to laying out the entire page again.</p>
+        <h3><a id="What_causes_a_reflow_32"></a>What causes a reflow?</h3>
+        <ul>
+        <li>Resizing the window</li>
+        <li>Changing the font</li>
+        <li>Adding or removing a stylesheet</li>
+        <li>Content changes, such as a user typing text in
+        an input box</li>
+        <li>Activation of CSS pseudo classes such as <code>:hover</code> (in IE the activation of the pseudo class of a sibling)</li>
+        <li>Manipulating the class attribute</li>
+        <li>A script manipulating the DOM</li>
+        <li>Calculating <code>offsetWidth</code> and <code>offsetHeight</code></li>
+        <li>Setting a property of the style attribute</li>
+        </ul>
+        <h3><a id="6_Best_Practices_to_minimize_reflows_44"></a>6 Best Practices to minimize reflows</h3>
+        <ol>
+        <li>
+        <p>Avoid setting multiple inline styles; avoid setting styles individually.  These trigger a reflow for each dynamic style change.</p>
+        </li>
+        <li>
+        <p>Use class names of elements, and do so as low in the DOM tree as possible.<br>
+        Changing the class attribute lets you apply multiple styles to an element with a single reflow.  But since this reflows all the element’s children, that means you don’t want to change the class on a wrapper div if you’re only targeting its first child.</p>
+        </li>
+        <li>
+        <p>Batch your DOM changes and perform them offline (e.g. detach, perform your DOM changes and then re-append).</p>
+        </li>
+        <li>
+        <p>Avoid computing styles too often.  If you must then cache those values.</p>
+        </li>
+        <li>
+        <p>Apply animations with <code>position: fixed or absolute</code> so it doesn’t affect the layout of other elements.</p>
+        </li>
+        <li>
+        <p>Avoid table layouts, they trigger more reflows than block layouts because multiple passes must be made over the elements.</p>
+        </li>
+        </ol>
+        <p>
+            <h4>Source Credits</h4>
+            <a href="http://blog.letitialew.com/post/30425074101/repaints-and-reflows-manipulating-the-dom-responsibly">Repaints and reflows: Manipulating the Dom reesponsibly</a>
+            <a href="http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow">Source credit</a>
+        </p>
+
+    </body>
+</html>
