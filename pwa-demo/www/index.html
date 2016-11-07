@@ -28,6 +28,15 @@
         
         <!-- PWA SUPPORT -->
         <link rel="manifest" href="manifest.json">
+
+        <!-- Register service worker-->
+        <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+            .then(() => console.log('service worker installed'))
+            .catch(err => console.log('Error', err));
+        }
+        </script>
         
         <!-- Add to home screen for Safari on iOS -->
         <meta name="apple-mobile-web-app-capable" content="yes">
