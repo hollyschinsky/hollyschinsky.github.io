@@ -8,10 +8,10 @@ self.addEventListener('install', function(e) {
     e.waitUntil(
         caches.open(cacheName).then(function(cache) {
             return cache.addAll([
-                './',
-                './lib/onsenui/css/font_awesome/css/font-awesome.min.css',                
-                './lib/onsenui/css/ionicons/css/ionicons.min.css',
-                './lib/onsenui/css/material-design-iconic-font/css/material-design-iconic-font.min.css',
+               './',
+               './lib/onsenui/css/font_awesome/css/font-awesome.min.css',                
+               './lib/onsenui/css/ionicons/css/ionicons.min.css',
+               './lib/onsenui/css/material-design-iconic-font/css/material-design-iconic-font.min.css',
                './lib/onsenui/css/material-design-iconic-font/fonts/Material-Design-Iconic-Font.ttf',            
                 './lib/onsenui/css/material-design-iconic-font/fonts/Material-Design-Iconic-Font.woff',
                 './lib/onsenui/css/material-design-iconic-font/fonts/Material-Design-Iconic-Font.woff2',
