@@ -16,39 +16,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
     myApp.isOnline = navigator.onLine; // browser flag for checking connection (may not always work)
     var dbName = 'my_todos.db';        // use a different local name for each to test multiple concurrent browsers
 
-    // Check if running on mobile device or in mobile simulator mode...
-    if (ons.platform.isIOS() || ons.platform.isAndroid()) {        
-        // Use network information plugin to detect current connection status
-        if (navigator.connection && navigator.connection.type == Connection.NONE) 
-            myApp.isOnline = false;
-        else myApp.isOnline = true;   
-
-        // Network information plugin events to detect offline when running on mobile
-        document.addEventListener('online', function() {
-            console.log("MOBILE Online detected")
-            myApp.isOnline = true;
-        })
-        document.addEventListener('offline', function() {
-            console.log("MOBILE Offline detected")
-            myApp.isOnline = false;
-        })
-
-        PouchDB.plugin(PouchAdapterCordovaSqlite);        
-        //myApp.db = new PouchDB(dbName, {adapter: 'cordova-sqlite'});
-        myApp.db = new PouchDB(dbName);                        
-    }
-    // Running in the browser (non-mobile emulation etc)
-    else {
-        window.addEventListener('online', function() {
-            console.log("Online detected")
-            myApp.isOnline = true;
-        })
-        window.addEventListener('offline', function() {
-            console.log("Offline detected")
-            myApp.isOnline = false;
-        })
-        myApp.db = new PouchDB(dbName);
-    }  
+    window.addEventListener('online', function() {
+        console.log("Online detected")
+        myApp.isOnline = true;
+    })
+    window.addEventListener('offline', function() {
+        console.log("Offline detected")
+        myApp.isOnline = false;
+    })
+    myApp.db = new PouchDB(dbName);  
     
     // Create or open the remote database to sync to - requires you to start up the PouchDB server 1st (see readme) 
     //myApp.remoteDB = new PouchDB("http://localhost:5984/myTodoList");
