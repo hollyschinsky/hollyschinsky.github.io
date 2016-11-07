@@ -12,7 +12,10 @@ document.addEventListener('init', function(event) {
 });
 
 // NOTE: Call to do pouchDB on device ready from a Cordova app
-document.addEventListener("DOMContentLoaded", function(event) {    
+//document.addEventListener("DOMContentLoaded", function(event) {
+window.addEventListener("load", function(event) {
+    console.log("All resources finished loading!");
+      
     myApp.isOnline = navigator.onLine; // browser flag for checking connection (may not always work)
     var dbName = 'my_todos.db';        // use a different local name for each to test multiple concurrent browsers
 
