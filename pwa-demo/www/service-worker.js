@@ -8,7 +8,7 @@ self.addEventListener('install', function(e) {
     e.waitUntil(
         caches.open(cacheName).then(function(cache) {
             return cache.addAll([
-               './',
+               './index.html',
                './lib/onsenui/css/font_awesome/css/font-awesome.min.css',                
                './lib/onsenui/css/ionicons/css/ionicons.min.css',
                './lib/onsenui/css/material-design-iconic-font/css/material-design-iconic-font.min.css',
