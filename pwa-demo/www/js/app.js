@@ -8,7 +8,6 @@ document.addEventListener('init', function(event) {
     // Each page calls its own initialization controller.
     if (myApp.controllers!=null && myApp.controllers!=undefined) {
         if (myApp.controllers.hasOwnProperty(page.id)) {
-            console.log("and... " + page.id);
             myApp.controllers[page.id](page);        
         }
     }      
