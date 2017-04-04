@@ -4,15 +4,17 @@ window.myApp = {};
 // Init Event Handler
 document.addEventListener('init', function(event) {
     var page = event.target;    
-   
+    console.log("Init " + page);
     // Each page calls its own initialization controller.
-    if (myApp.controllers.hasOwnProperty(page.id)) {
-        myApp.controllers[page.id](page);        
+    if (myApp.controllers!=null && myApp.controllers!=undefined) {
+        if (myApp.controllers.hasOwnProperty(page.id)) {
+            myApp.controllers[page.id](page);        
+        }
     }      
 });
 
-// NOTE: Call to do pouchDB on device ready from a Cordova app
-//document.addEventListener("DOMContentLoaded", function(event) {
+// NOTE: Call to do pouchDB on device ready from a Cordova app or browser platform. When running
+// as a PWA from a remote server though, we won't get that deviceready so need to use the load event.
 window.addEventListener("load", function(event) {
     console.log("All resources finished loading!");
       
@@ -53,23 +55,5 @@ window.addEventListener("load", function(event) {
     
 });
 
-// Page Show Event Handler
-document.addEventListener('show', function(event) {
-    var page = event.target;    
-   
-    // Hack for duplicate tab page issue in Onsen UI on Safari Mobile
-    // https://github.com/OnsenUI/OnsenUI/issues/1584
-    if (ons.platform.isIOS()) {
-        var tabs = document.querySelector('#myTabbar').getElementsByTagName('ons-page');
-        for (var i=0; i<tabs.length; i++) {
-            var tabbar = document.querySelector('.tab-bar__content');
-            if (tabs[i].id=="completedTasksPage") {
-                if (i>0) 
-                    tabbar.removeChild(tabs[i]);                
-                else document.querySelector('#completedTasksPage').setAttribute('style',"display:block")
-            }
-        }
-    }
-});
 
 

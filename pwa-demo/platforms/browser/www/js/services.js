@@ -303,17 +303,19 @@ myApp.services = {
 		handleChanges: function() {
 			myApp.db.changes({ since: 'now', live: true, include_docs: true}).on('change', function(change) {
 				console.log("Processing db change " + JSON.stringify(change));	
-				var taskItem = document.getElementById(change.id);
+				var taskItem = document.getElementById(change.id);				
 				if (taskItem!=null) {
 					if (change.deleted)
 						myApp.services.tasks.removeTaskElem(taskItem);
 					else myApp.services.tasks.update(taskItem,change.doc);
 				}
 				else {
-					var taskItem = myApp.services.tasks.createTaskElem(change.doc);
-					if (change.doc.completed) 
-						myApp.services.tasks.addToCompletedList(taskItem);
-					else myApp.services.tasks.addToPendingList(taskItem);					
+					if (!change.deleted) {
+						var taskItem = myApp.services.tasks.createTaskElem(change.doc);
+						if (change.doc.completed) 
+							myApp.services.tasks.addToCompletedList(taskItem);
+						else myApp.services.tasks.addToPendingList(taskItem);
+					}					
 				} 		
 			}).on('error', function (err) {
 				console.log(err);
